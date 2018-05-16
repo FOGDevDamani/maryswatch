@@ -1,0 +1,583 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BFB8505320ABE029007FC8F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB8505220ABE029007FC8F9 /* AppDelegate.swift */; };
+		BFB8505520ABE029007FC8F9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB8505420ABE029007FC8F9 /* ViewController.swift */; };
+		BFB8505820ABE02A007FC8F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFB8505620ABE02A007FC8F9 /* Main.storyboard */; };
+		BFB8505A20ABE02E007FC8F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFB8505920ABE02E007FC8F9 /* Assets.xcassets */; };
+		BFB8505D20ABE02E007FC8F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFB8505B20ABE02E007FC8F9 /* LaunchScreen.storyboard */; };
+		BFB8506820ABE02E007FC8F9 /* maryswatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB8506720ABE02E007FC8F9 /* maryswatchTests.swift */; };
+		BFB8507320ABE02E007FC8F9 /* maryswatchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB8507220ABE02E007FC8F9 /* maryswatchUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BFB8506420ABE02E007FC8F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFB8504720ABE029007FC8F9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BFB8504E20ABE029007FC8F9;
+			remoteInfo = maryswatch;
+		};
+		BFB8506F20ABE02E007FC8F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFB8504720ABE029007FC8F9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BFB8504E20ABE029007FC8F9;
+			remoteInfo = maryswatch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BFB8504F20ABE029007FC8F9 /* maryswatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = maryswatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFB8505220ABE029007FC8F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BFB8505420ABE029007FC8F9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BFB8505720ABE02A007FC8F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BFB8505920ABE02E007FC8F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BFB8505C20ABE02E007FC8F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BFB8505E20ABE02E007FC8F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFB8506320ABE02E007FC8F9 /* maryswatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = maryswatchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFB8506720ABE02E007FC8F9 /* maryswatchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = maryswatchTests.swift; sourceTree = "<group>"; };
+		BFB8506920ABE02E007FC8F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFB8506E20ABE02E007FC8F9 /* maryswatchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = maryswatchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFB8507220ABE02E007FC8F9 /* maryswatchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = maryswatchUITests.swift; sourceTree = "<group>"; };
+		BFB8507420ABE02E007FC8F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BFB8504C20ABE029007FC8F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFB8506020ABE02E007FC8F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFB8506B20ABE02E007FC8F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BFB8504620ABE029007FC8F9 = {
+			isa = PBXGroup;
+			children = (
+				BFB8505120ABE029007FC8F9 /* maryswatch */,
+				BFB8506620ABE02E007FC8F9 /* maryswatchTests */,
+				BFB8507120ABE02E007FC8F9 /* maryswatchUITests */,
+				BFB8505020ABE029007FC8F9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BFB8505020ABE029007FC8F9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BFB8504F20ABE029007FC8F9 /* maryswatch.app */,
+				BFB8506320ABE02E007FC8F9 /* maryswatchTests.xctest */,
+				BFB8506E20ABE02E007FC8F9 /* maryswatchUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BFB8505120ABE029007FC8F9 /* maryswatch */ = {
+			isa = PBXGroup;
+			children = (
+				BFB8505220ABE029007FC8F9 /* AppDelegate.swift */,
+				BFB8505420ABE029007FC8F9 /* ViewController.swift */,
+				BFB8505620ABE02A007FC8F9 /* Main.storyboard */,
+				BFB8505920ABE02E007FC8F9 /* Assets.xcassets */,
+				BFB8505B20ABE02E007FC8F9 /* LaunchScreen.storyboard */,
+				BFB8505E20ABE02E007FC8F9 /* Info.plist */,
+			);
+			path = maryswatch;
+			sourceTree = "<group>";
+		};
+		BFB8506620ABE02E007FC8F9 /* maryswatchTests */ = {
+			isa = PBXGroup;
+			children = (
+				BFB8506720ABE02E007FC8F9 /* maryswatchTests.swift */,
+				BFB8506920ABE02E007FC8F9 /* Info.plist */,
+			);
+			path = maryswatchTests;
+			sourceTree = "<group>";
+		};
+		BFB8507120ABE02E007FC8F9 /* maryswatchUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BFB8507220ABE02E007FC8F9 /* maryswatchUITests.swift */,
+				BFB8507420ABE02E007FC8F9 /* Info.plist */,
+			);
+			path = maryswatchUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BFB8504E20ABE029007FC8F9 /* maryswatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BFB8507720ABE02E007FC8F9 /* Build configuration list for PBXNativeTarget "maryswatch" */;
+			buildPhases = (
+				BFB8504B20ABE029007FC8F9 /* Sources */,
+				BFB8504C20ABE029007FC8F9 /* Frameworks */,
+				BFB8504D20ABE029007FC8F9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = maryswatch;
+			productName = maryswatch;
+			productReference = BFB8504F20ABE029007FC8F9 /* maryswatch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BFB8506220ABE02E007FC8F9 /* maryswatchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BFB8507A20ABE02E007FC8F9 /* Build configuration list for PBXNativeTarget "maryswatchTests" */;
+			buildPhases = (
+				BFB8505F20ABE02E007FC8F9 /* Sources */,
+				BFB8506020ABE02E007FC8F9 /* Frameworks */,
+				BFB8506120ABE02E007FC8F9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BFB8506520ABE02E007FC8F9 /* PBXTargetDependency */,
+			);
+			name = maryswatchTests;
+			productName = maryswatchTests;
+			productReference = BFB8506320ABE02E007FC8F9 /* maryswatchTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BFB8506D20ABE02E007FC8F9 /* maryswatchUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BFB8507D20ABE02E007FC8F9 /* Build configuration list for PBXNativeTarget "maryswatchUITests" */;
+			buildPhases = (
+				BFB8506A20ABE02E007FC8F9 /* Sources */,
+				BFB8506B20ABE02E007FC8F9 /* Frameworks */,
+				BFB8506C20ABE02E007FC8F9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BFB8507020ABE02E007FC8F9 /* PBXTargetDependency */,
+			);
+			name = maryswatchUITests;
+			productName = maryswatchUITests;
+			productReference = BFB8506E20ABE02E007FC8F9 /* maryswatchUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFB8504720ABE029007FC8F9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = "FOGDev Studios";
+				TargetAttributes = {
+					BFB8504E20ABE029007FC8F9 = {
+						CreatedOnToolsVersion = 9.3.1;
+					};
+					BFB8506220ABE02E007FC8F9 = {
+						CreatedOnToolsVersion = 9.3.1;
+						TestTargetID = BFB8504E20ABE029007FC8F9;
+					};
+					BFB8506D20ABE02E007FC8F9 = {
+						CreatedOnToolsVersion = 9.3.1;
+						TestTargetID = BFB8504E20ABE029007FC8F9;
+					};
+				};
+			};
+			buildConfigurationList = BFB8504A20ABE029007FC8F9 /* Build configuration list for PBXProject "maryswatch" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BFB8504620ABE029007FC8F9;
+			productRefGroup = BFB8505020ABE029007FC8F9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BFB8504E20ABE029007FC8F9 /* maryswatch */,
+				BFB8506220ABE02E007FC8F9 /* maryswatchTests */,
+				BFB8506D20ABE02E007FC8F9 /* maryswatchUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BFB8504D20ABE029007FC8F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFB8505D20ABE02E007FC8F9 /* LaunchScreen.storyboard in Resources */,
+				BFB8505A20ABE02E007FC8F9 /* Assets.xcassets in Resources */,
+				BFB8505820ABE02A007FC8F9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFB8506120ABE02E007FC8F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFB8506C20ABE02E007FC8F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BFB8504B20ABE029007FC8F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFB8505520ABE029007FC8F9 /* ViewController.swift in Sources */,
+				BFB8505320ABE029007FC8F9 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFB8505F20ABE02E007FC8F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFB8506820ABE02E007FC8F9 /* maryswatchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFB8506A20ABE02E007FC8F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFB8507320ABE02E007FC8F9 /* maryswatchUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BFB8506520ABE02E007FC8F9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BFB8504E20ABE029007FC8F9 /* maryswatch */;
+			targetProxy = BFB8506420ABE02E007FC8F9 /* PBXContainerItemProxy */;
+		};
+		BFB8507020ABE02E007FC8F9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BFB8504E20ABE029007FC8F9 /* maryswatch */;
+			targetProxy = BFB8506F20ABE02E007FC8F9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BFB8505620ABE02A007FC8F9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BFB8505720ABE02A007FC8F9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BFB8505B20ABE02E007FC8F9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BFB8505C20ABE02E007FC8F9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BFB8507520ABE02E007FC8F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BFB8507620ABE02E007FC8F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BFB8507820ABE02E007FC8F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = maryswatch/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "FOGDev-Studios.maryswatch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BFB8507920ABE02E007FC8F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = maryswatch/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "FOGDev-Studios.maryswatch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BFB8507B20ABE02E007FC8F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = maryswatchTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "FOGDev-Studios.maryswatchTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/maryswatch.app/maryswatch";
+			};
+			name = Debug;
+		};
+		BFB8507C20ABE02E007FC8F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = maryswatchTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "FOGDev-Studios.maryswatchTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/maryswatch.app/maryswatch";
+			};
+			name = Release;
+		};
+		BFB8507E20ABE02E007FC8F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = maryswatchUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "FOGDev-Studios.maryswatchUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = maryswatch;
+			};
+			name = Debug;
+		};
+		BFB8507F20ABE02E007FC8F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = maryswatchUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "FOGDev-Studios.maryswatchUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = maryswatch;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BFB8504A20ABE029007FC8F9 /* Build configuration list for PBXProject "maryswatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFB8507520ABE02E007FC8F9 /* Debug */,
+				BFB8507620ABE02E007FC8F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BFB8507720ABE02E007FC8F9 /* Build configuration list for PBXNativeTarget "maryswatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFB8507820ABE02E007FC8F9 /* Debug */,
+				BFB8507920ABE02E007FC8F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BFB8507A20ABE02E007FC8F9 /* Build configuration list for PBXNativeTarget "maryswatchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFB8507B20ABE02E007FC8F9 /* Debug */,
+				BFB8507C20ABE02E007FC8F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BFB8507D20ABE02E007FC8F9 /* Build configuration list for PBXNativeTarget "maryswatchUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFB8507E20ABE02E007FC8F9 /* Debug */,
+				BFB8507F20ABE02E007FC8F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFB8504720ABE029007FC8F9 /* Project object */;
+}
