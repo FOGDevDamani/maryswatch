@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xrK-U1-5PM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xrK-U1-5PM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -331,6 +331,9 @@
                                         <state key="normal" title="Submit" image="submit">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="submitSettings:" destination="s67-Sl-qSv" eventType="touchUpInside" id="i1r-6G-FSI"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VpV-Jl-cFq">
                                         <rect key="frame" x="138" y="-7128" width="100" height="40"/>
@@ -507,6 +510,20 @@
                         <viewLayoutGuide key="safeArea" id="lb8-Rc-9AN"/>
                     </view>
                     <navigationItem key="navigationItem" id="kk4-ue-nQp"/>
+                    <connections>
+                        <outlet property="address" destination="3Xw-Wf-DBg" id="MPU-Wd-ncc"/>
+                        <outlet property="cellPhone" destination="DgR-DA-4kc" id="flb-vf-7gr"/>
+                        <outlet property="city" destination="KoH-bU-N1t" id="609-FQ-93V"/>
+                        <outlet property="country" destination="lMs-2r-fjM" id="g3Y-iT-9KX"/>
+                        <outlet property="email" destination="rJv-Sw-feN" id="kzz-M3-Vro"/>
+                        <outlet property="firstName" destination="PmX-cV-mMw" id="FtK-g8-HLQ"/>
+                        <outlet property="lastName" destination="q2y-Ef-OyQ" id="1Nx-jg-1P6"/>
+                        <outlet property="password" destination="qFn-fy-m96" id="sID-9n-shw"/>
+                        <outlet property="state" destination="X4b-7Z-Wdl" id="IQb-pw-QlE"/>
+                        <outlet property="typeOfOwner" destination="kqt-kf-uDs" id="P6t-MG-8LW"/>
+                        <outlet property="userName" destination="6WS-ED-Zgj" id="gTy-Sl-lEj"/>
+                        <outlet property="zipCode" destination="dIv-6h-l4k" id="c3c-aG-dEc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eWO-Bn-ayh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -589,10 +606,10 @@
             </objects>
             <point key="canvasLocation" x="1908" y="974"/>
         </scene>
-        <!--View Controller-->
+        <!--Company Details Controller-->
         <scene sceneID="4IC-K3-thP">
             <objects>
-                <viewController id="Bcu-86-MJD" sceneMemberID="viewController">
+                <viewController id="Bcu-86-MJD" customClass="CompanyDetailsController" customModule="maryswatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NJ4-Lb-zHr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -811,6 +828,9 @@
                                         <state key="normal" title="Submit" image="submit">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="submitCompanyDetails:" destination="Bcu-86-MJD" eventType="touchUpInside" id="S0V-tP-yuT"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ri-Cg-Ybc">
                                         <rect key="frame" x="142" y="72" width="100" height="40"/>
@@ -874,6 +894,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ekk-mz-VWF"/>
                     </view>
+                    <connections>
+                        <outlet property="EIN" destination="0CM-Fm-Ee5" id="G1k-dR-802"/>
+                        <outlet property="businessPhone" destination="eVc-Tz-Nuy" id="eTG-bo-HuX"/>
+                        <outlet property="companyAddress" destination="E4P-vI-6Mw" id="eu8-5q-Mfj"/>
+                        <outlet property="companyCity" destination="h8K-Az-wV3" id="7LZ-zY-QDS"/>
+                        <outlet property="companyName" destination="6WK-ig-an5" id="2ZM-Ur-VRS"/>
+                        <outlet property="companyState" destination="rnj-yy-6Ua" id="RVJ-zC-WvK"/>
+                        <outlet property="companyWebsite" destination="Nif-KG-C0k" id="C7u-BT-ST2"/>
+                        <outlet property="companyZipcode" destination="wc9-L4-aPm" id="O92-vF-CvT"/>
+                        <outlet property="numberOfEmployees" destination="wil-g0-Hai" id="gJ8-Zg-zJg"/>
+                        <outlet property="typeOfCompany" destination="osS-hk-mFA" id="Rot-qX-XU7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Guw-Ht-crm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

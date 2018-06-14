@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF08FAD820CDF11D00268F09 /* CompanyDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF08FAD720CDF11D00268F09 /* CompanyDetailsController.swift */; };
+		BF08FADA20CDF7E800268F09 /* OwnerCustomersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF08FAD920CDF7E800268F09 /* OwnerCustomersController.swift */; };
+		BF08FADC20CDFD0B00268F09 /* OwnerTeamController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF08FADB20CDFD0B00268F09 /* OwnerTeamController.swift */; };
+		BF08FADE20CE165700268F09 /* OwnerAssetsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF08FADD20CE165700268F09 /* OwnerAssetsController.swift */; };
+		BF08FAE020D0A02300268F09 /* RenterTeamController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF08FADF20D0A02300268F09 /* RenterTeamController.swift */; };
+		BF08FAE220D0BBC700268F09 /* ServiceProCompanyDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF08FAE120D0BBC700268F09 /* ServiceProCompanyDetailsController.swift */; };
+		BF08FAE420D0C08C00268F09 /* ServiceProCustomersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF08FAE320D0C08C00268F09 /* ServiceProCustomersController.swift */; };
+		BF08FAE620D0C66F00268F09 /* ServiceProTeamController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF08FAE520D0C66F00268F09 /* ServiceProTeamController.swift */; };
 		BFB8505320ABE029007FC8F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB8505220ABE029007FC8F9 /* AppDelegate.swift */; };
 		BFB8505520ABE029007FC8F9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB8505420ABE029007FC8F9 /* ViewController.swift */; };
 		BFB8505820ABE02A007FC8F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFB8505620ABE02A007FC8F9 /* Main.storyboard */; };
@@ -74,6 +82,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BF08FAD720CDF11D00268F09 /* CompanyDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyDetailsController.swift; sourceTree = "<group>"; };
+		BF08FAD920CDF7E800268F09 /* OwnerCustomersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerCustomersController.swift; sourceTree = "<group>"; };
+		BF08FADB20CDFD0B00268F09 /* OwnerTeamController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerTeamController.swift; sourceTree = "<group>"; };
+		BF08FADD20CE165700268F09 /* OwnerAssetsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerAssetsController.swift; sourceTree = "<group>"; };
+		BF08FADF20D0A02300268F09 /* RenterTeamController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenterTeamController.swift; sourceTree = "<group>"; };
+		BF08FAE120D0BBC700268F09 /* ServiceProCompanyDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProCompanyDetailsController.swift; sourceTree = "<group>"; };
+		BF08FAE320D0C08C00268F09 /* ServiceProCustomersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProCustomersController.swift; sourceTree = "<group>"; };
+		BF08FAE520D0C66F00268F09 /* ServiceProTeamController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProTeamController.swift; sourceTree = "<group>"; };
 		BFB8504F20ABE029007FC8F9 /* maryswatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = maryswatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFB8505220ABE029007FC8F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFB8505420ABE029007FC8F9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -246,9 +262,9 @@
 			children = (
 				BFB850A220AD411B007FC8F9 /* ServicePro Login */,
 				BFB850A120AD410E007FC8F9 /* ServicePro Maintenance Assessment */,
-				BFB850A020AD40AF007FC8F9 /* ServicePro Manage My Account */,
 				BFB8509F20AD4093007FC8F9 /* ServicePro Current */,
 				BFB8509E20AD4073007FC8F9 /* ServicePro History */,
+				BFB850A020AD40AF007FC8F9 /* ServicePro Manage My Account */,
 			);
 			path = ServicePro;
 			sourceTree = "<group>";
@@ -299,10 +315,14 @@
 			isa = PBXGroup;
 			children = (
 				BFB8509020ABEB54007FC8F9 /* OwnerProfile.storyboard */,
+				BF08FAD720CDF11D00268F09 /* CompanyDetailsController.swift */,
 				BFB850E920B73F4F007FC8F9 /* OwnerProfileController.swift */,
 				BFB8509220ABEB7A007FC8F9 /* OwnerCustomers.storyboard */,
+				BF08FAD920CDF7E800268F09 /* OwnerCustomersController.swift */,
 				BFB8509420ABEB86007FC8F9 /* OwnerTeam.storyboard */,
+				BF08FADB20CDFD0B00268F09 /* OwnerTeamController.swift */,
 				BFB8509620ABEBA9007FC8F9 /* OwnerAssets.storyboard */,
+				BF08FADD20CE165700268F09 /* OwnerAssetsController.swift */,
 			);
 			path = "Manage My Account";
 			sourceTree = "<group>";
@@ -329,6 +349,7 @@
 				BFB850DD20B7378B007FC8F9 /* RenterProfile.storyboard */,
 				BFB850EB20B73F97007FC8F9 /* RenterProfileController.swift */,
 				BFB850DF20B73798007FC8F9 /* RenterTeam.storyboard */,
+				BF08FADF20D0A02300268F09 /* RenterTeamController.swift */,
 			);
 			path = "Manage My Account";
 			sourceTree = "<group>";
@@ -380,8 +401,11 @@
 			children = (
 				BFB850E120B7384A007FC8F9 /* ServiceProProfile.storyboard */,
 				BFB850ED20B73FCD007FC8F9 /* ServiceProProfileController.swift */,
+				BF08FAE120D0BBC700268F09 /* ServiceProCompanyDetailsController.swift */,
 				BFB850E320B73869007FC8F9 /* ServiceProCustomers.storyboard */,
+				BF08FAE320D0C08C00268F09 /* ServiceProCustomersController.swift */,
 				BFB850E520B73885007FC8F9 /* ServiceProTeam.storyboard */,
+				BF08FAE520D0C66F00268F09 /* ServiceProTeamController.swift */,
 				BFB850E720B738A6007FC8F9 /* ServiceProCalendar.storyboard */,
 			);
 			path = "ServicePro Manage My Account";
@@ -633,18 +657,26 @@
 				BFB850D420B52049007FC8F9 /* RenterInvoiceEstimateController.swift in Sources */,
 				BFB850D220B51FC4007FC8F9 /* RenterProgressCell.swift in Sources */,
 				BFB850BC20B260DA007FC8F9 /* OwnerHistoryCell.swift in Sources */,
+				BF08FADA20CDF7E800268F09 /* OwnerCustomersController.swift in Sources */,
 				BFB850CC20B4C10D007FC8F9 /* RenterMaintenanceRequestController.swift in Sources */,
 				BFB850BA20B260A1007FC8F9 /* OwnerHIstoryController.swift in Sources */,
 				BFB8508D20ABE9EB007FC8F9 /* LandingPageController.swift in Sources */,
 				BFB850B220B25F21007FC8F9 /* OwnerMaintenanceRequestCell.swift in Sources */,
 				BFB850C620B2633F007FC8F9 /* NewRequestsCell.swift in Sources */,
 				BFB850C020B261D2007FC8F9 /* InvoiceEstimateCell.swift in Sources */,
+				BF08FADE20CE165700268F09 /* OwnerAssetsController.swift in Sources */,
+				BF08FAE420D0C08C00268F09 /* ServiceProCustomersController.swift in Sources */,
 				BFB8505520ABE029007FC8F9 /* ViewController.swift in Sources */,
+				BF08FAE220D0BBC700268F09 /* ServiceProCompanyDetailsController.swift in Sources */,
+				BF08FAE620D0C66F00268F09 /* ServiceProTeamController.swift in Sources */,
 				BFB850EA20B73F4F007FC8F9 /* OwnerProfileController.swift in Sources */,
 				BFB850BE20B26164007FC8F9 /* InvoiceEstimateController.swift in Sources */,
+				BF08FAE020D0A02300268F09 /* RenterTeamController.swift in Sources */,
 				BFB850B020B25EDB007FC8F9 /* OwnerMaintenanceRequestController.swift in Sources */,
+				BF08FAD820CDF11D00268F09 /* CompanyDetailsController.swift in Sources */,
 				BFB850EE20B73FCD007FC8F9 /* ServiceProProfileController.swift in Sources */,
 				BFB850C420B26290007FC8F9 /* OwnerProgressController.swift in Sources */,
+				BF08FADC20CDFD0B00268F09 /* OwnerTeamController.swift in Sources */,
 				BFB850C820B26380007FC8F9 /* OwnerProgressDataCell.swift in Sources */,
 				BFB8505320ABE029007FC8F9 /* AppDelegate.swift in Sources */,
 				BFB850B620B25FC6007FC8F9 /* OwnerMessagesController.swift in Sources */,

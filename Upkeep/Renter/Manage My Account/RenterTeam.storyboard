@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -126,10 +126,10 @@
             </objects>
             <point key="canvasLocation" x="-1902" y="4050"/>
         </scene>
-        <!--View Controller-->
+        <!--Renter Team Controller-->
         <scene sceneID="q99-dn-16I">
             <objects>
-                <viewController id="8LZ-c3-YI7" sceneMemberID="viewController">
+                <viewController id="8LZ-c3-YI7" customClass="RenterTeamController" customModule="maryswatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2QV-MB-wse">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -255,6 +255,9 @@
                                         <state key="normal" image="add team member">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="addTeamMemberData:" destination="8LZ-c3-YI7" eventType="touchUpInside" id="HTg-6V-Uvi"/>
+                                        </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="hma-Ae-LJG" userLabel="Owner My Team Email Stack View">
                                         <rect key="frame" x="21" y="356" width="334" height="30"/>
@@ -373,6 +376,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Pso-Ri-5Ph"/>
                     </view>
+                    <connections>
+                        <outlet property="renterTeamAddress" destination="ICV-hS-gkv" id="y1O-Nk-hqg"/>
+                        <outlet property="renterTeamAssign" destination="o9t-YL-o3v" id="38D-bv-HDU"/>
+                        <outlet property="renterTeamCellPhone" destination="b3a-9i-ndm" id="NcJ-TO-CYY"/>
+                        <outlet property="renterTeamCity" destination="tBC-nG-Jcd" id="BRt-m2-05h"/>
+                        <outlet property="renterTeamEmail" destination="Qns-qL-Fws" id="tYF-gQ-ly4"/>
+                        <outlet property="renterTeamFirstName" destination="MFr-CG-uHm" id="76k-FT-mD8"/>
+                        <outlet property="renterTeamLastName" destination="Jhc-AN-Oiz" id="dA5-jg-ygB"/>
+                        <outlet property="renterTeamState" destination="XDc-Pm-5Ps" id="gY4-5Y-Oe1"/>
+                        <outlet property="renterTeamZipcode" destination="MIX-WE-F91" id="l1F-w3-SB1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uxa-5S-kQz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

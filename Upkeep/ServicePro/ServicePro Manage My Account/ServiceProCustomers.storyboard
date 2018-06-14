@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Service Pro Customers Controller-->
         <scene sceneID="AIA-KF-ZtH">
             <objects>
-                <viewController id="9ud-FG-btC" sceneMemberID="viewController">
+                <viewController id="9ud-FG-btC" customClass="ServiceProCustomersController" customModule="maryswatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VJv-Lm-r4q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -189,6 +189,9 @@
                                         <state key="normal" image="add customer">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="spAddCustomerData:" destination="9ud-FG-btC" eventType="touchUpInside" id="xBn-fy-z2z"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1P-Hd-SWv">
                                         <rect key="frame" x="138" y="72" width="100" height="40"/>
@@ -289,6 +292,17 @@
                         <viewLayoutGuide key="safeArea" id="F83-n2-kH2"/>
                     </view>
                     <navigationItem key="navigationItem" id="Bzl-c3-zkP"/>
+                    <connections>
+                        <outlet property="spCustomerAddress" destination="fbc-K4-YGc" id="Rqo-ew-kXP"/>
+                        <outlet property="spCustomerCellPhone" destination="te2-hw-mQ7" id="6hu-jN-SFM"/>
+                        <outlet property="spCustomerCity" destination="xkV-vT-Yzd" id="QsY-BJ-wQs"/>
+                        <outlet property="spCustomerCounty" destination="IjR-G1-wxO" id="O9u-aT-oAQ"/>
+                        <outlet property="spCustomerEmail" destination="pI8-1I-4Pm" id="Eyg-ym-Mhj"/>
+                        <outlet property="spCustomerFirstName" destination="4rU-V5-JU0" id="ndK-M9-1Cx"/>
+                        <outlet property="spCustomerLastName" destination="p7G-WU-HAG" id="GT7-YK-MfN"/>
+                        <outlet property="spCustomerState" destination="Dz4-5g-83F" id="udC-So-3O6"/>
+                        <outlet property="spCustomerZipcode" destination="eGU-iJ-7zI" id="2ye-gP-8gA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sa5-PW-sSa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -313,7 +327,7 @@
         <!--My Customers View Controller-->
         <scene sceneID="Q4a-EI-qNd">
             <objects>
-                <viewController id="Qfc-ez-V2v" customClass="MyCustomersViewController" customModule="MarysWatch_sWatch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Qfc-ez-V2v" customClass="MyCustomersViewController" customModule="maryswatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LIn-UH-43a">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

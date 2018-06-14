@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -120,6 +120,7 @@
         <!--View Controller-->
         <scene sceneID="EiV-fN-irz">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="taB-QE-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="nPz-he-VgP" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="E6m-BY-JCZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -207,14 +208,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="gt1-S2-neh"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="taB-QE-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2644" y="131"/>
         </scene>
-        <!--View Controller-->
+        <!--Owner Team Controller-->
         <scene sceneID="WVl-eo-AnZ">
             <objects>
-                <viewController id="7R3-cY-5QB" sceneMemberID="viewController">
+                <viewController id="7R3-cY-5QB" customClass="OwnerTeamController" customModule="maryswatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KmG-BD-Ncw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -341,6 +341,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
+                                            <action selector="addTeamMemberSettings:" destination="7R3-cY-5QB" eventType="touchUpInside" id="m2j-e6-10o"/>
                                             <segue destination="nPz-he-VgP" kind="show" id="WEv-dI-B56"/>
                                         </connections>
                                     </button>
@@ -461,6 +462,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eji-cP-o7T"/>
                     </view>
+                    <connections>
+                        <outlet property="assignOwnerTeamMember" destination="2UB-0P-DDw" id="k6H-2k-1z9"/>
+                        <outlet property="ownerTeamMemberAddress" destination="9fk-XJ-qfa" id="KIV-JJ-vJw"/>
+                        <outlet property="ownerTeamMemberCellPhone" destination="lnE-XO-ZB6" id="QpE-NE-MXU"/>
+                        <outlet property="ownerTeamMemberCity" destination="NcL-T5-emD" id="Amz-LM-VQy"/>
+                        <outlet property="ownerTeamMemberEmail" destination="2qM-ci-xNT" id="r4l-wj-HD6"/>
+                        <outlet property="ownerTeamMemberFirstName" destination="eCq-RA-v97" id="8F1-m7-gcY"/>
+                        <outlet property="ownerTeamMemberLastName" destination="pM0-zg-hYv" id="sRv-Xk-xZW"/>
+                        <outlet property="ownerTeamMemberState" destination="iXb-s2-E15" id="s0G-9o-YUv"/>
+                        <outlet property="ownerTeamMemberZipcode" destination="U1b-lS-s1Y" id="0Ao-ge-erz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HKX-HY-f9V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

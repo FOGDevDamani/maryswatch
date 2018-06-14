@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Service Pro Team Controller-->
         <scene sceneID="qPo-YX-gA2">
             <objects>
-                <viewController id="mxU-yZ-Axe" sceneMemberID="viewController">
+                <viewController id="mxU-yZ-Axe" customClass="ServiceProTeamController" customModule="maryswatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nST-56-jFw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -258,6 +258,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AiP-IN-j0j"/>
                     </view>
+                    <connections>
+                        <outlet property="spAssignTeamMember" destination="7ta-FM-UCj" id="YNN-x3-cxf"/>
+                        <outlet property="spTeamMemberAddress" destination="Cc9-ge-lX9" id="co2-yb-QTv"/>
+                        <outlet property="spTeamMemberCellPhone" destination="gji-fg-Orm" id="bxE-h7-D1h"/>
+                        <outlet property="spTeamMemberCity" destination="Pz4-wK-XmU" id="xiH-VW-0xN"/>
+                        <outlet property="spTeamMemberEmail" destination="4R8-by-2m9" id="UYL-un-Te8"/>
+                        <outlet property="spTeamMemberFirstName" destination="nc5-vL-tU8" id="gEt-L4-mrg"/>
+                        <outlet property="spTeamMemberLastName" destination="TxY-dj-i1N" id="8bv-dB-1rV"/>
+                        <outlet property="spTeamMemberState" destination="m4Z-Vw-Alc" id="hU5-YU-Sjk"/>
+                        <outlet property="spTeamMemberZipcode" destination="NMA-Mq-26h" id="kck-hQ-QXi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bPA-ca-Bvf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -282,7 +293,7 @@
         <!--My Team View Controller-->
         <scene sceneID="ENz-cY-JjY">
             <objects>
-                <viewController id="p5O-WC-5jM" customClass="MyTeamViewController" customModule="MarysWatch_sWatch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="p5O-WC-5jM" customClass="MyTeamViewController" customModule="maryswatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lqw-47-b0N">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

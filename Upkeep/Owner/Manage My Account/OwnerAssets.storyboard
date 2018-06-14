@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -101,10 +101,10 @@
             </objects>
             <point key="canvasLocation" x="743" y="119"/>
         </scene>
-        <!--View Controller-->
+        <!--Owner Assets Controller-->
         <scene sceneID="bQB-ne-2G3">
             <objects>
-                <viewController id="3Io-V8-gJo" sceneMemberID="viewController">
+                <viewController id="3Io-V8-gJo" customClass="OwnerAssetsController" customModule="maryswatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JXM-N8-GXU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -287,6 +287,9 @@
                                         <state key="normal" image="add property button">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="addPropertySettings:" destination="3Io-V8-gJo" eventType="touchUpInside" id="m3R-C5-z6A"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vV3-Pd-XKM">
                                         <rect key="frame" x="142" y="72" width="100" height="40"/>
@@ -345,6 +348,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cNV-0l-rav"/>
                     </view>
+                    <connections>
+                        <outlet property="ownerPropertyAddress" destination="pyT-qg-SK1" id="J3U-h8-zWW"/>
+                        <outlet property="ownerPropertyCity" destination="E8R-yr-Kla" id="h2N-je-CHl"/>
+                        <outlet property="ownerPropertyCounty" destination="JDR-Or-Ttz" id="kY1-0G-e1c"/>
+                        <outlet property="ownerPropertyState" destination="pyT-qg-SK1" id="ZeA-aN-Suf"/>
+                        <outlet property="ownerPropertyZipcode" destination="5UJ-Wu-jWk" id="tqh-s0-jr8"/>
+                        <outlet property="ownerTypeOfProperty" destination="uZp-3b-sz7" id="2BI-OR-WAc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1H6-9F-iWh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
