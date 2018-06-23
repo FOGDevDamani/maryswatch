@@ -109,23 +109,6 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ee1-zX-i3l" userLabel="Renter Priority Stack View">
-                                        <rect key="frame" x="20" y="157" width="135" height="30"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="263" text="Priority:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hPH-aO-1L4">
-                                                <rect key="frame" x="0.0" y="0.0" width="45.5" height="30"/>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="748" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="laT-cr-h3S">
-                                                <rect key="frame" x="50.5" y="0.0" width="84.5" height="30"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                        </subviews>
-                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="4IP-IO-tvW" userLabel="Renter Address Stack View">
                                         <rect key="frame" x="20" y="195" width="275" height="30"/>
                                         <subviews>
@@ -183,8 +166,8 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CRf-OE-m8T">
-                                                <rect key="frame" x="0.0" y="18" width="335" height="50"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="CRf-OE-m8T">
+                                                <rect key="frame" x="0.0" y="18" width="315" height="50"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="WSz-WN-QBT"/>
@@ -193,6 +176,9 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="CRf-OE-m8T" secondAttribute="trailing" constant="20" symbolic="YES" id="fVz-Jj-4NA"/>
+                                        </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="MGG-AN-m6h" userLabel="Renter Preferred Time and Date Stack View">
                                         <rect key="frame" x="19" y="386" width="256" height="30"/>
@@ -232,7 +218,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Job#__" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7KM-Mm-h8e">
-                                        <rect key="frame" x="317" y="142" width="50" height="20.5"/>
+                                        <rect key="frame" x="317" y="132" width="50" height="20.5"/>
                                         <viewLayoutGuide key="safeArea" id="wi1-LL-X6q"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
                                         <nil key="textColor"/>
@@ -333,12 +319,51 @@
                                             </switch>
                                         </subviews>
                                     </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="i0S-tX-x8e" userLabel="Priority and Type Stack View">
+                                        <rect key="frame" x="20" y="157" width="305" height="30"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="xwi-jN-QfV" userLabel="Renter Priority Stack View">
+                                                <rect key="frame" x="0.0" y="0.0" width="145.5" height="30"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="263" text="Priority:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fwj-7G-NQr">
+                                                        <rect key="frame" x="0.0" y="0.0" width="45.5" height="30"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="748" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Iis-1U-KLG">
+                                                        <rect key="frame" x="50.5" y="0.0" width="95" height="30"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="3Mp-6w-Lzf" userLabel="Renter Priority Stack View">
+                                                <rect key="frame" x="165.5" y="0.0" width="139.5" height="30"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="263" text="Type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucj-4J-tCl">
+                                                        <rect key="frame" x="0.0" y="0.0" width="32.5" height="30"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="748" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gnu-nO-QZQ">
+                                                        <rect key="frame" x="37.5" y="0.0" width="102" height="30"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.69411764710000001" green="0.79607843140000001" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="4IP-IO-tvW" firstAttribute="top" secondItem="i0S-tX-x8e" secondAttribute="bottom" constant="8" id="0jm-OH-huE"/>
                                     <constraint firstAttribute="trailing" secondItem="UWk-zs-6R5" secondAttribute="trailing" constant="20" symbolic="YES" id="1dt-mV-SNg"/>
                                     <constraint firstAttribute="bottom" secondItem="WO2-am-aKW" secondAttribute="bottom" constant="8" id="6xN-XL-Nh2"/>
-                                    <constraint firstItem="ee1-zX-i3l" firstAttribute="leading" secondItem="ray-LN-orE" secondAttribute="leading" constant="20" symbolic="YES" id="7R8-Tn-TEW"/>
                                     <constraint firstAttribute="trailing" secondItem="MGG-AN-m6h" secondAttribute="trailing" constant="100" id="8N0-ZB-6sb"/>
                                     <constraint firstAttribute="trailing" secondItem="Dw8-aX-JkB" secondAttribute="trailing" constant="160" id="8pt-5Q-00B"/>
                                     <constraint firstAttribute="trailing" secondItem="ulY-MX-due" secondAttribute="trailing" constant="80" id="Abz-Xi-YZA"/>
@@ -346,6 +371,7 @@
                                     <constraint firstItem="aQ3-Eu-G3N" firstAttribute="top" secondItem="PBm-Uc-8Nx" secondAttribute="bottom" constant="8" symbolic="YES" id="EJ4-Fi-Lcj"/>
                                     <constraint firstItem="Dw8-aX-JkB" firstAttribute="leading" secondItem="ray-LN-orE" secondAttribute="leading" constant="20" symbolic="YES" id="GKx-EP-CL2"/>
                                     <constraint firstAttribute="trailing" secondItem="PBm-Uc-8Nx" secondAttribute="trailing" constant="260" id="I44-fn-RaO"/>
+                                    <constraint firstItem="i0S-tX-x8e" firstAttribute="top" secondItem="4Zw-wA-8BY" secondAttribute="bottom" constant="8" id="K1G-Af-hVj"/>
                                     <constraint firstItem="MGG-AN-m6h" firstAttribute="top" secondItem="aQ3-Eu-G3N" secondAttribute="bottom" constant="8" symbolic="YES" id="KN0-yg-c4g"/>
                                     <constraint firstItem="Dw8-aX-JkB" firstAttribute="top" secondItem="4IP-IO-tvW" secondAttribute="bottom" constant="8" symbolic="YES" id="KQ9-Ws-fHM"/>
                                     <constraint firstItem="fZF-OT-WLr" firstAttribute="top" secondItem="ray-LN-orE" secondAttribute="topMargin" id="MIh-Wk-Qv0"/>
@@ -360,7 +386,7 @@
                                     <constraint firstItem="4Zw-wA-8BY" firstAttribute="top" secondItem="5h8-jr-Y06" secondAttribute="bottom" constant="15" id="UEY-51-6nJ"/>
                                     <constraint firstItem="PBm-Uc-8Nx" firstAttribute="leading" secondItem="ray-LN-orE" secondAttribute="leading" constant="20" symbolic="YES" id="aTR-tL-MvD"/>
                                     <constraint firstItem="ulY-MX-due" firstAttribute="top" secondItem="UWk-zs-6R5" secondAttribute="bottom" constant="5" id="c63-gw-G2y"/>
-                                    <constraint firstItem="7KM-Mm-h8e" firstAttribute="top" secondItem="oQI-cd-tWe" secondAttribute="bottom" constant="20" id="cHF-Kf-XFq"/>
+                                    <constraint firstItem="7KM-Mm-h8e" firstAttribute="top" secondItem="oQI-cd-tWe" secondAttribute="bottom" constant="10" id="cHF-Kf-XFq"/>
                                     <constraint firstAttribute="trailing" secondItem="4IP-IO-tvW" secondAttribute="trailing" constant="80" id="cvf-Bh-mZ3"/>
                                     <constraint firstItem="ulY-MX-due" firstAttribute="leading" secondItem="ray-LN-orE" secondAttribute="leading" constant="19" id="dDz-c5-BOz"/>
                                     <constraint firstItem="oQI-cd-tWe" firstAttribute="top" secondItem="ray-LN-orE" secondAttribute="topMargin" id="dhb-dz-qLb"/>
@@ -369,14 +395,13 @@
                                     <constraint firstItem="5h8-jr-Y06" firstAttribute="leading" secondItem="ray-LN-orE" secondAttribute="leading" constant="20" symbolic="YES" id="gLz-Tf-Rb7"/>
                                     <constraint firstAttribute="bottom" secondItem="URh-Nv-ARM" secondAttribute="bottom" constant="8" id="ggu-Gg-Fvw"/>
                                     <constraint firstItem="4IP-IO-tvW" firstAttribute="leading" secondItem="ray-LN-orE" secondAttribute="leading" constant="20" symbolic="YES" id="inj-Al-TGJ"/>
-                                    <constraint firstItem="4IP-IO-tvW" firstAttribute="top" secondItem="ee1-zX-i3l" secondAttribute="bottom" constant="8" symbolic="YES" id="kV4-4x-q90"/>
+                                    <constraint firstItem="i0S-tX-x8e" firstAttribute="leading" secondItem="ray-LN-orE" secondAttribute="leading" constant="20" id="k6D-1h-ft2"/>
+                                    <constraint firstAttribute="trailing" secondItem="i0S-tX-x8e" secondAttribute="trailing" constant="50" id="n5k-m9-6Bh"/>
                                     <constraint firstItem="UWk-zs-6R5" firstAttribute="top" secondItem="yeA-Td-jfw" secondAttribute="bottom" constant="8" symbolic="YES" id="nsY-po-hU6"/>
                                     <constraint firstItem="UWk-zs-6R5" firstAttribute="leading" secondItem="ray-LN-orE" secondAttribute="leading" constant="20" symbolic="YES" id="q4J-hz-7xK"/>
                                     <constraint firstItem="fZF-OT-WLr" firstAttribute="centerX" secondItem="ray-LN-orE" secondAttribute="centerX" id="s8g-Nh-O7L"/>
                                     <constraint firstAttribute="trailing" secondItem="7KM-Mm-h8e" secondAttribute="trailing" constant="8" id="tW7-Zm-xUQ"/>
                                     <constraint firstItem="yeA-Td-jfw" firstAttribute="top" secondItem="MGG-AN-m6h" secondAttribute="bottom" constant="8" symbolic="YES" id="tkV-Pm-Kbv"/>
-                                    <constraint firstItem="ee1-zX-i3l" firstAttribute="top" secondItem="4Zw-wA-8BY" secondAttribute="bottom" constant="8" symbolic="YES" id="xha-CE-WLJ"/>
-                                    <constraint firstAttribute="trailing" secondItem="ee1-zX-i3l" secondAttribute="trailing" constant="220" id="ykw-wh-1Bm"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -398,9 +423,10 @@
                         <outlet property="preferredContactNumber" destination="RXd-rA-5S5" id="5DH-SS-tHi"/>
                         <outlet property="preferredTimeAndDate" destination="WXd-3N-P30" id="wZZ-hr-9h6"/>
                         <outlet property="previouslyReported" destination="Bc7-11-VbS" id="SvF-ZS-SMx"/>
-                        <outlet property="problemDescription" destination="CRf-OE-m8T" id="SEJ-FI-srH"/>
+                        <outlet property="problemDescription" destination="CRf-OE-m8T" id="jHJ-YE-C5t"/>
                         <outlet property="requestAddress" destination="2aw-Pz-q9o" id="efR-RH-Emr"/>
-                        <outlet property="requestPriority" destination="laT-cr-h3S" id="Xay-N8-l92"/>
+                        <outlet property="requestPriority" destination="Iis-1U-KLG" id="cCi-C0-MAb"/>
+                        <outlet property="requestType" destination="Gnu-nO-QZQ" id="iOg-ci-WWp"/>
                         <outlet property="room" destination="IoY-x0-sLZ" id="Rbo-CM-evS"/>
                     </connections>
                 </viewController>
@@ -838,10 +864,10 @@
             </objects>
             <point key="canvasLocation" x="-8688" y="465"/>
         </scene>
-        <!--Renter-MyProfile-->
+        <!--RenterMaintenanceHistory-->
         <scene sceneID="eVf-wc-36m">
             <objects>
-                <viewControllerPlaceholder storyboardName="Renter-MyProfile" id="owi-oZ-akD" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="RenterMaintenanceHistory" id="owi-oZ-akD" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BJo-Kh-dfu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-8544" y="-650"/>
@@ -865,11 +891,11 @@
             </objects>
             <point key="canvasLocation" x="-11502" y="744"/>
         </scene>
-        <!--Item-->
+        <!--History-->
         <scene sceneID="7Mi-mL-8eX">
             <objects>
                 <navigationController id="L8h-yr-tvb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="qXk-zV-0kl"/>
+                    <tabBarItem key="tabBarItem" title="History" id="qXk-zV-0kl"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7pX-mT-hdF">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -893,11 +919,11 @@
             </objects>
             <point key="canvasLocation" x="-10446" y="752"/>
         </scene>
-        <!--Item-->
+        <!--Progress-->
         <scene sceneID="Rp3-yJ-mJw">
             <objects>
                 <navigationController id="zK4-Cv-liP" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="jFA-gE-RK7"/>
+                    <tabBarItem key="tabBarItem" title="Progress" id="jFA-gE-RK7"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vDA-Fu-5hc">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

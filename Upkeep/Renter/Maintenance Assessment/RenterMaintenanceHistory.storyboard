@@ -14,7 +14,7 @@
         <!--Current-->
         <scene sceneID="LRC-Xt-Ciz">
             <objects>
-                <viewController id="bPp-v7-GfP" customClass="Renter_MaintenanceProgressViewController" customModule="maryswatch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="bPp-v7-GfP" customClass="RenterRequestController" customModule="maryswatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sf6-lV-pqS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -32,7 +32,7 @@
                                         <rect key="frame" x="0.0" y="274" width="375" height="344"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RenterProgressCell" rowHeight="63" id="HGZ-fx-f7n" customClass="Renter_ProgressTableViewCell" customModule="maryswatch" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RenterProgressCell" rowHeight="63" id="HGZ-fx-f7n" customClass="RenterHistoryCell" customModule="maryswatch" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="375" height="63"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HGZ-fx-f7n" id="Gvk-sv-Zhz">
@@ -71,8 +71,10 @@
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
-                                                    <outlet property="addressLabel" destination="DrC-Ga-kHO" id="84k-bV-Ycz"/>
-                                                    <outlet property="estimationLabel" destination="Ra1-xu-RSj" id="acX-vt-AaC"/>
+                                                    <outlet property="jobAddress" destination="DrC-Ga-kHO" id="fz1-tF-xgy"/>
+                                                    <outlet property="jobNumber" destination="Qp2-BQ-TX3" id="vbo-fO-P28"/>
+                                                    <outlet property="jobSummary" destination="Ra1-xu-RSj" id="Nof-Um-8wf"/>
+                                                    <segue destination="Xve-ll-Uzw" kind="show" id="ZQm-yo-O9e"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -161,6 +163,9 @@
                     <tabBarItem key="tabBarItem" title="Current" id="ggE-Fd-tqG"/>
                     <navigationItem key="navigationItem" id="JZS-kr-V8Y"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="renterHIstoryView" destination="d9f-az-M5o" id="FNs-T2-qpB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ggn-pM-adn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -169,7 +174,7 @@
         <!--Request-->
         <scene sceneID="H7P-4T-BKI">
             <objects>
-                <viewController id="Xve-ll-Uzw" customClass="Renter_ManageMyAccountViewController" customModule="maryswatch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Xve-ll-Uzw" customClass="RenterMaintenanceHistory" customModule="maryswatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ezc-PX-ANE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -264,24 +269,21 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="MeX-zR-stl" userLabel="Renter Previously Reported Stack View">
-                                        <rect key="frame" x="20" y="209" width="195" height="30"/>
+                                        <rect key="frame" x="20" y="209" width="195" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="262" verticalCompressionResistancePriority="753" text="Previously Reported:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="43y-30-IMj">
-                                                <rect key="frame" x="0.0" y="0.0" width="122.5" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="141" height="31"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HMU-Lo-Hjj">
-                                                <rect key="frame" x="127.5" y="0.0" width="67.5" height="30"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6AF-d2-ca4">
+                                                <rect key="frame" x="146" y="0.0" width="51" height="31"/>
+                                            </switch>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="mEE-my-ScS" userLabel="Renter Room Stack View">
-                                        <rect key="frame" x="20" y="247" width="95" height="30"/>
+                                        <rect key="frame" x="20" y="248" width="95" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwt-aw-3Qx">
                                                 <rect key="frame" x="0.0" y="0.0" width="39" height="30"/>
@@ -298,7 +300,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="sIB-zd-VhF" userLabel="Renter Problem DescriptionStack View">
-                                        <rect key="frame" x="20" y="285" width="335" height="68"/>
+                                        <rect key="frame" x="20" y="286" width="335" height="68"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Problem Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="isO-ff-gqB">
                                                 <rect key="frame" x="0.0" y="0.0" width="126" height="18"/>
@@ -306,8 +308,8 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5WR-Td-QAc">
-                                                <rect key="frame" x="0.0" y="18" width="335" height="50"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5WR-Td-QAc">
+                                                <rect key="frame" x="0.0" y="18" width="315" height="50"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="EtF-FG-dF3"/>
@@ -316,9 +318,12 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="5WR-Td-QAc" secondAttribute="trailing" constant="20" symbolic="YES" id="rlT-O2-QPb"/>
+                                        </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="oDi-Sg-G9n" userLabel="Renter Preferred Time and Date Stack View">
-                                        <rect key="frame" x="19" y="361" width="256" height="30"/>
+                                        <rect key="frame" x="19" y="362" width="256" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preferred Time and Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RvG-AN-ycQ">
                                                 <rect key="frame" x="0.0" y="0.0" width="149" height="30"/>
@@ -335,10 +340,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dB7-mY-1eA" userLabel="Renter Entry Auth Stack View">
-                                        <rect key="frame" x="20" y="438" width="335" height="67"/>
+                                        <rect key="frame" x="20" y="439" width="335" height="109"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Do you authorize entry into your unit to perform the maintenance or repairs requested above in your abscence?" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yka-WL-c9K">
-                                                <rect key="frame" x="0.0" y="0.0" width="286" height="67"/>
+                                                <rect key="frame" x="0.0" y="21" width="286" height="67"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="286" id="VK0-5N-1pv"/>
                                                     <constraint firstAttribute="height" constant="67" id="v7a-5q-TqI"/>
@@ -348,21 +353,21 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ntY-Nh-9wQ">
-                                                <rect key="frame" x="296" y="18" width="41" height="31"/>
+                                                <rect key="frame" x="296" y="39" width="41" height="31"/>
                                             </switch>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="oUX-QF-VHn" userLabel="Renter Previously Reported Stack View">
-                                        <rect key="frame" x="19" y="510" width="276" height="30"/>
+                                        <rect key="frame" x="19" y="553" width="276" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="262" verticalCompressionResistancePriority="753" text="Previously Contact Number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEc-IE-Vzd">
-                                                <rect key="frame" x="0.0" y="0.0" width="165.5" height="30"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="262" verticalCompressionResistancePriority="753" text="Preferred Contact Number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEc-IE-Vzd">
+                                                <rect key="frame" x="0.0" y="0.0" width="161.5" height="30"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KM8-ce-7oA">
-                                                <rect key="frame" x="170.5" y="0.0" width="105.5" height="30"/>
+                                                <rect key="frame" x="166.5" y="0.0" width="109.5" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -370,7 +375,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="W6F-HR-f71" userLabel="Renter Pets Stack View">
-                                        <rect key="frame" x="20" y="399" width="155" height="31"/>
+                                        <rect key="frame" x="20" y="400" width="155" height="31"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SJs-wC-TDK">
                                                 <rect key="frame" x="0.0" y="0.0" width="56.5" height="31"/>
@@ -383,7 +388,7 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6AF-d2-ca4">
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="weC-WQ-BkA">
                                                 <rect key="frame" x="56.5" y="0.0" width="100.5" height="31"/>
                                             </switch>
                                         </subviews>
@@ -405,8 +410,8 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3KI-tV-HJt">
-                                        <rect key="frame" x="44" y="578" width="35" height="35"/>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" verticalHuggingPriority="248" verticalCompressionResistancePriority="748" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3KI-tV-HJt">
+                                        <rect key="frame" x="44" y="620" width="35" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="DTD-t0-GXE"/>
                                             <constraint firstAttribute="width" constant="35" id="Ki2-oH-h3E"/>
@@ -416,6 +421,7 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.69411764710000001" green="0.79607843140000001" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="3KI-tV-HJt" secondAttribute="bottomMargin" constant="20" id="0DY-rN-aD4"/>
                                     <constraint firstItem="D6D-4K-PD3" firstAttribute="leading" secondItem="8o4-di-roy" secondAttribute="leading" constant="20" id="2Vi-td-HJv"/>
                                     <constraint firstItem="dB7-mY-1eA" firstAttribute="top" secondItem="W6F-HR-f71" secondAttribute="bottom" constant="8" symbolic="YES" id="5YW-Qi-WYo"/>
                                     <constraint firstAttribute="trailing" secondItem="sIB-zd-VhF" secondAttribute="trailing" constant="20" symbolic="YES" id="5xT-ZE-liq"/>
@@ -432,7 +438,7 @@
                                     <constraint firstAttribute="trailing" secondItem="MeX-zR-stl" secondAttribute="trailing" constant="160" id="DW8-Pl-IOE"/>
                                     <constraint firstAttribute="trailing" secondItem="W6F-HR-f71" secondAttribute="trailing" constant="200" id="FvX-3p-Y13"/>
                                     <constraint firstItem="mEE-my-ScS" firstAttribute="leading" secondItem="8o4-di-roy" secondAttribute="leading" constant="20" symbolic="YES" id="HdH-u7-Vy5"/>
-                                    <constraint firstItem="bkf-cs-Rc0" firstAttribute="top" secondItem="8o4-di-roy" secondAttribute="top" constant="83" id="IQP-1w-uH6"/>
+                                    <constraint firstItem="bkf-cs-Rc0" firstAttribute="top" secondItem="8o4-di-roy" secondAttribute="topMargin" constant="55" id="IQP-1w-uH6"/>
                                     <constraint firstItem="MG5-9G-WKk" firstAttribute="top" secondItem="bkf-cs-Rc0" secondAttribute="bottom" constant="2" id="IVc-mP-4Wl"/>
                                     <constraint firstItem="MeX-zR-stl" firstAttribute="leading" secondItem="8o4-di-roy" secondAttribute="leading" constant="20" symbolic="YES" id="Ie0-o7-EXI"/>
                                     <constraint firstItem="W6F-HR-f71" firstAttribute="leading" secondItem="8o4-di-roy" secondAttribute="leading" constant="20" symbolic="YES" id="J8Z-iQ-0EW"/>
@@ -444,6 +450,7 @@
                                     <constraint firstAttribute="trailing" secondItem="oDi-Sg-G9n" secondAttribute="trailing" constant="100" id="bai-qV-zgI"/>
                                     <constraint firstAttribute="trailing" secondItem="mEE-my-ScS" secondAttribute="trailing" constant="260" id="bfs-Ze-5xc"/>
                                     <constraint firstItem="MeX-zR-stl" firstAttribute="top" secondItem="Qza-XV-Eec" secondAttribute="bottom" constant="8" symbolic="YES" id="bgA-I1-vb1"/>
+                                    <constraint firstItem="3KI-tV-HJt" firstAttribute="top" secondItem="oUX-QF-VHn" secondAttribute="bottom" constant="37" id="e0B-uV-ksW"/>
                                     <constraint firstItem="W6F-HR-f71" firstAttribute="top" secondItem="oDi-Sg-G9n" secondAttribute="bottom" constant="8" symbolic="YES" id="eMY-RX-pSm"/>
                                     <constraint firstItem="oDi-Sg-G9n" firstAttribute="top" secondItem="sIB-zd-VhF" secondAttribute="bottom" constant="8" symbolic="YES" id="hqe-aS-5gF"/>
                                     <constraint firstItem="sIB-zd-VhF" firstAttribute="top" secondItem="mEE-my-ScS" secondAttribute="bottom" constant="8" symbolic="YES" id="nME-dO-70e"/>
@@ -452,7 +459,6 @@
                                     <constraint firstItem="oDi-Sg-G9n" firstAttribute="leading" secondItem="8o4-di-roy" secondAttribute="leading" constant="19" id="smT-BK-1DU"/>
                                     <constraint firstAttribute="trailing" secondItem="F7U-uD-ekB" secondAttribute="trailing" constant="8" id="ubt-97-d0x"/>
                                     <constraint firstItem="sIB-zd-VhF" firstAttribute="leading" secondItem="8o4-di-roy" secondAttribute="leading" constant="20" symbolic="YES" id="vhA-3c-7Wl"/>
-                                    <constraint firstAttribute="bottom" secondItem="3KI-tV-HJt" secondAttribute="bottom" constant="54" id="wYw-yE-PsR"/>
                                     <constraint firstItem="Qza-XV-Eec" firstAttribute="top" secondItem="D6D-4K-PD3" secondAttribute="bottom" constant="8" id="wkb-IT-ayH"/>
                                 </constraints>
                             </view>
@@ -468,6 +474,18 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Request" id="I8y-WU-190"/>
                     <navigationItem key="navigationItem" id="VUC-ux-ybS"/>
+                    <connections>
+                        <outlet property="RenterHistoryPriority" destination="tDs-t8-FYO" id="vJ7-s6-COv"/>
+                        <outlet property="renterHIstoryAddress" destination="kPH-MU-oz7" id="E35-19-aN3"/>
+                        <outlet property="renterHIstoryPreferredContactNumber" destination="KM8-ce-7oA" id="M4O-VE-GVQ"/>
+                        <outlet property="renterHIstoryProblemDescription" destination="5WR-Td-QAc" id="b0I-5y-bWc"/>
+                        <outlet property="renterHistoryAuthorizedEntry" destination="ntY-Nh-9wQ" id="3OJ-yY-BdN"/>
+                        <outlet property="renterHistoryPets" destination="6AF-d2-ca4" id="Q8t-Fx-CLN"/>
+                        <outlet property="renterHistoryPreferredTimeAndDate" destination="HJQ-41-3Iu" id="qk9-dF-lm2"/>
+                        <outlet property="renterHistoryPreviouslyReported" destination="6AF-d2-ca4" id="fQq-Sn-yWA"/>
+                        <outlet property="renterHistoryRoom" destination="bCp-Cu-p0O" id="2qB-xT-Aj3"/>
+                        <outlet property="renterHistoryType" destination="gl2-WP-R1G" id="M3l-uR-wQf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A9a-rR-yx2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

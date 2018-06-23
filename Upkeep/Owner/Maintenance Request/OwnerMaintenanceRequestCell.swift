@@ -9,6 +9,13 @@
 import UIKit
 
 class OwnerMaintenanceRequestCell: UITableViewCell {
+    
+    @IBOutlet weak var ownerRequestType: UITextField!
+    @IBOutlet weak var ownerRequestUnitNumber: UITextField!
+    @IBOutlet weak var ownerRequestRoom: UITextField!
+    @IBOutlet weak var ownerRequestDescription: UITextField!
+    @IBOutlet weak var ownerRequestCamera: UIButton!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()

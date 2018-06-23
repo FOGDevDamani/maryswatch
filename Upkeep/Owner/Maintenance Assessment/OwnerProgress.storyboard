@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gNE-LD-g0I">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,10 +12,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Current-->
+        <!--Progress-->
         <scene sceneID="u1Q-kd-g0w">
             <objects>
-                <viewController storyboardIdentifier="Owner-Maintenance Progress" id="gNE-LD-g0I" customClass="MaintenanceProgressViewController" customModule="MarysWatch_sWatch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Owner-Maintenance Progress" id="gNE-LD-g0I" customClass="MaintenanceProgressViewController" customModule="maryswatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cjb-mx-cHM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -49,7 +49,7 @@
                                         <rect key="frame" x="8" y="482" width="359" height="128"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NewRequestsDataCell" id="Ym9-3y-h6k" customClass="NewRequestsTableViewCell" customModule="MarysWatch_sWatch" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NewRequestsDataCell" id="Ym9-3y-h6k" customClass="NewRequestsTableViewCell" customModule="maryswatch" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="359" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ym9-3y-h6k" id="QLG-OX-1Uq">
@@ -155,7 +155,7 @@
                                         <rect key="frame" x="8" y="275" width="359" height="117"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="OwnerProgressDataCell" rowHeight="67" id="Yhl-US-b4l" customClass="OwnerProgressDataTableViewCell" customModule="MarysWatch_sWatch" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="OwnerProgressDataCell" rowHeight="67" id="Yhl-US-b4l" customClass="OwnerProgressDataTableViewCell" customModule="maryswatch" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="359" height="67"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yhl-US-b4l" id="tfn-mW-TxH">
@@ -286,7 +286,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Jvb-Rh-dU6"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Current" id="me5-0q-dHz"/>
+                    <tabBarItem key="tabBarItem" title="Progress" id="me5-0q-dHz"/>
                     <navigationItem key="navigationItem" id="fQb-1Q-cys"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -356,7 +356,7 @@
                                             <constraint firstAttribute="height" constant="247" id="ouM-Z9-6l5"/>
                                         </constraints>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DataCell" id="IfG-JR-Xdu" customClass="ProgressDataTableViewCell" customModule="MarysWatch_sWatch" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DataCell" id="IfG-JR-Xdu" customClass="ProgressDataTableViewCell" customModule="maryswatch" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="359" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IfG-JR-Xdu" id="n7P-DS-IdD">
@@ -1701,7 +1701,7 @@
         <!--Maintenance Requested View Controller-->
         <scene sceneID="XKH-yi-egZ">
             <objects>
-                <viewController id="3KW-zk-hpW" customClass="MaintenanceRequestedViewController" customModule="MarysWatch_sWatch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="3KW-zk-hpW" customClass="MaintenanceRequestedViewController" customModule="maryswatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h9K-eE-azi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

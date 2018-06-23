@@ -9,6 +9,8 @@
 import UIKit
 
 class OwnerHistoryCell: UITableViewCell {
+    
+    var defaults = UserDefaults.standard
 
     @IBOutlet weak var jobNumber: UIButton!
     @IBOutlet weak var addressLabel: UILabel!
@@ -25,5 +27,7 @@ class OwnerHistoryCell: UITableViewCell {
         
         // Configure the view for the selected state
     }
+    
+    
     
 }

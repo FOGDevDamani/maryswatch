@@ -21,6 +21,20 @@
 		BF08FAF020D8B5EB00268F09 /* ServiceProMaintenanceAssessment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF08FAEF20D8B5EB00268F09 /* ServiceProMaintenanceAssessment.storyboard */; };
 		BF08FAF220D8C95200268F09 /* ServiceProProgress.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF08FAF120D8C95200268F09 /* ServiceProProgress.storyboard */; };
 		BF08FAF420D8C9E900268F09 /* ServiceProHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF08FAF320D8C9E900268F09 /* ServiceProHistory.storyboard */; };
+		BF663CC520DC470800B45B72 /* RenterHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF663CC420DC470800B45B72 /* RenterHistoryCell.swift */; };
+		BF663CC720DC4FA400B45B72 /* TheBossOwner.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF663CC620DC4FA400B45B72 /* TheBossOwner.storyboard */; };
+		BF663CC920DC51EF00B45B72 /* TheBossSP.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF663CC820DC51EF00B45B72 /* TheBossSP.storyboard */; };
+		BF663CCB20DC52B100B45B72 /* TheBossOwnerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF663CCA20DC52B100B45B72 /* TheBossOwnerController.swift */; };
+		BF663CCD20DC533600B45B72 /* TheBossOwnerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF663CCC20DC533600B45B72 /* TheBossOwnerCell.swift */; };
+		BF663CCF20DC54D400B45B72 /* TheBossSPController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF663CCE20DC54D400B45B72 /* TheBossSPController.swift */; };
+		BF663CD120DC554700B45B72 /* TheBossSPCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF663CD020DC554700B45B72 /* TheBossSPCell.swift */; };
+		BF663CD320DCAE6300B45B72 /* ServiceProMaterialsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF663CD220DCAE6300B45B72 /* ServiceProMaterialsController.swift */; };
+		BF663CD520DCAF1D00B45B72 /* MaterialsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF663CD420DCAF1D00B45B72 /* MaterialsCell.swift */; };
+		BF6F556020DDCF9200C4E2D5 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6F555E20DDCF8E00C4E2D5 /* RealmSwift.framework */; };
+		BF6F556120DDCF9200C4E2D5 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF6F555E20DDCF8E00C4E2D5 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BF6F556220DDCF9200C4E2D5 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6F555F20DDCF9200C4E2D5 /* Realm.framework */; };
+		BF6F556320DDCF9200C4E2D5 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF6F555F20DDCF9200C4E2D5 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BF9EDE0E20D9985A0026CEA9 /* ServiceProMaintenanceAssessmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9EDE0D20D9985A0026CEA9 /* ServiceProMaintenanceAssessmentController.swift */; };
 		BFB8505320ABE029007FC8F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB8505220ABE029007FC8F9 /* AppDelegate.swift */; };
 		BFB8505520ABE029007FC8F9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB8505420ABE029007FC8F9 /* ViewController.swift */; };
 		BFB8505820ABE02A007FC8F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFB8505620ABE02A007FC8F9 /* Main.storyboard */; };
@@ -68,6 +82,8 @@
 		BFB850EA20B73F4F007FC8F9 /* OwnerProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB850E920B73F4F007FC8F9 /* OwnerProfileController.swift */; };
 		BFB850EC20B73F97007FC8F9 /* RenterProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB850EB20B73F97007FC8F9 /* RenterProfileController.swift */; };
 		BFB850EE20B73FCD007FC8F9 /* ServiceProProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB850ED20B73FCD007FC8F9 /* ServiceProProfileController.swift */; };
+		BFE47D9E20DC3CC000B8EA19 /* RenterRequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE47D9D20DC3CC000B8EA19 /* RenterRequestController.swift */; };
+		BFE47DA020DC3CEF00B8EA19 /* RenterMaintenanceHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE47D9F20DC3CEF00B8EA19 /* RenterMaintenanceHistory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +103,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		BF6F556420DDCF9300C4E2D5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BF6F556320DDCF9200C4E2D5 /* Realm.framework in Embed Frameworks */,
+				BF6F556120DDCF9200C4E2D5 /* RealmSwift.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		BF08FAD720CDF11D00268F09 /* CompanyDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyDetailsController.swift; sourceTree = "<group>"; };
 		BF08FAD920CDF7E800268F09 /* OwnerCustomersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerCustomersController.swift; sourceTree = "<group>"; };
@@ -102,6 +133,18 @@
 		BF08FAEF20D8B5EB00268F09 /* ServiceProMaintenanceAssessment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ServiceProMaintenanceAssessment.storyboard; sourceTree = "<group>"; };
 		BF08FAF120D8C95200268F09 /* ServiceProProgress.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ServiceProProgress.storyboard; sourceTree = "<group>"; };
 		BF08FAF320D8C9E900268F09 /* ServiceProHistory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ServiceProHistory.storyboard; sourceTree = "<group>"; };
+		BF663CC420DC470800B45B72 /* RenterHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenterHistoryCell.swift; sourceTree = "<group>"; };
+		BF663CC620DC4FA400B45B72 /* TheBossOwner.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TheBossOwner.storyboard; sourceTree = "<group>"; };
+		BF663CC820DC51EF00B45B72 /* TheBossSP.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TheBossSP.storyboard; sourceTree = "<group>"; };
+		BF663CCA20DC52B100B45B72 /* TheBossOwnerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheBossOwnerController.swift; sourceTree = "<group>"; };
+		BF663CCC20DC533600B45B72 /* TheBossOwnerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheBossOwnerCell.swift; sourceTree = "<group>"; };
+		BF663CCE20DC54D400B45B72 /* TheBossSPController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheBossSPController.swift; sourceTree = "<group>"; };
+		BF663CD020DC554700B45B72 /* TheBossSPCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheBossSPCell.swift; sourceTree = "<group>"; };
+		BF663CD220DCAE6300B45B72 /* ServiceProMaterialsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProMaterialsController.swift; sourceTree = "<group>"; };
+		BF663CD420DCAF1D00B45B72 /* MaterialsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialsCell.swift; sourceTree = "<group>"; };
+		BF6F555E20DDCF8E00C4E2D5 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		BF6F555F20DDCF9200C4E2D5 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		BF9EDE0D20D9985A0026CEA9 /* ServiceProMaintenanceAssessmentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProMaintenanceAssessmentController.swift; sourceTree = "<group>"; };
 		BFB8504F20ABE029007FC8F9 /* maryswatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = maryswatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFB8505220ABE029007FC8F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFB8505420ABE029007FC8F9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +198,8 @@
 		BFB850E920B73F4F007FC8F9 /* OwnerProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerProfileController.swift; sourceTree = "<group>"; };
 		BFB850EB20B73F97007FC8F9 /* RenterProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenterProfileController.swift; sourceTree = "<group>"; };
 		BFB850ED20B73FCD007FC8F9 /* ServiceProProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProProfileController.swift; sourceTree = "<group>"; };
+		BFE47D9D20DC3CC000B8EA19 /* RenterRequestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenterRequestController.swift; sourceTree = "<group>"; };
+		BFE47D9F20DC3CEF00B8EA19 /* RenterMaintenanceHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenterMaintenanceHistory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +207,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF6F556220DDCF9200C4E2D5 /* Realm.framework in Frameworks */,
+				BF6F556020DDCF9200C4E2D5 /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +248,8 @@
 		BFB8504620ABE029007FC8F9 = {
 			isa = PBXGroup;
 			children = (
+				BF6F555F20DDCF9200C4E2D5 /* Realm.framework */,
+				BF6F555E20DDCF8E00C4E2D5 /* RealmSwift.framework */,
 				BFB8505120ABE029007FC8F9 /* maryswatch */,
 				BFB850A320AD42CD007FC8F9 /* The Boss */,
 				BFB8508020ABE3B5007FC8F9 /* Upkeep */,
@@ -393,6 +442,9 @@
 				BFB850D320B52049007FC8F9 /* RenterInvoiceEstimateController.swift */,
 				BFB850D520B52087007FC8F9 /* RenterInvoiceEstimateCell.swift */,
 				BF08FAED20D347AD00268F09 /* RenterMaintenanceHistory.storyboard */,
+				BFE47D9D20DC3CC000B8EA19 /* RenterRequestController.swift */,
+				BF663CC420DC470800B45B72 /* RenterHistoryCell.swift */,
+				BFE47D9F20DC3CEF00B8EA19 /* RenterMaintenanceHistory.swift */,
 			);
 			path = "Maintenance Assessment";
 			sourceTree = "<group>";
@@ -448,6 +500,9 @@
 			isa = PBXGroup;
 			children = (
 				BF08FAEF20D8B5EB00268F09 /* ServiceProMaintenanceAssessment.storyboard */,
+				BF663CD220DCAE6300B45B72 /* ServiceProMaterialsController.swift */,
+				BF663CD420DCAF1D00B45B72 /* MaterialsCell.swift */,
+				BF9EDE0D20D9985A0026CEA9 /* ServiceProMaintenanceAssessmentController.swift */,
 			);
 			path = "ServicePro Maintenance Assessment";
 			sourceTree = "<group>";
@@ -517,6 +572,9 @@
 		BFB850AA20AD4381007FC8F9 /* TheBossSP */ = {
 			isa = PBXGroup;
 			children = (
+				BF663CC820DC51EF00B45B72 /* TheBossSP.storyboard */,
+				BF663CD020DC554700B45B72 /* TheBossSPCell.swift */,
+				BF663CCE20DC54D400B45B72 /* TheBossSPController.swift */,
 			);
 			path = TheBossSP;
 			sourceTree = "<group>";
@@ -531,6 +589,9 @@
 		BFB850AC20AD4396007FC8F9 /* TheBossOwner */ = {
 			isa = PBXGroup;
 			children = (
+				BF663CC620DC4FA400B45B72 /* TheBossOwner.storyboard */,
+				BF663CCC20DC533600B45B72 /* TheBossOwnerCell.swift */,
+				BF663CCA20DC52B100B45B72 /* TheBossOwnerController.swift */,
 			);
 			path = TheBossOwner;
 			sourceTree = "<group>";
@@ -545,6 +606,8 @@
 				BFB8504B20ABE029007FC8F9 /* Sources */,
 				BFB8504C20ABE029007FC8F9 /* Frameworks */,
 				BFB8504D20ABE029007FC8F9 /* Resources */,
+				BF6F556420DDCF9300C4E2D5 /* Embed Frameworks */,
+				BF6F556520DDCFF600C4E2D5 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -640,6 +703,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFB8509120ABEB54007FC8F9 /* OwnerProfile.storyboard in Resources */,
+				BF663CC920DC51EF00B45B72 /* TheBossSP.storyboard in Resources */,
 				BFB8505D20ABE02E007FC8F9 /* LaunchScreen.storyboard in Resources */,
 				BFB850E220B7384A007FC8F9 /* ServiceProProfile.storyboard in Resources */,
 				BFB850E620B73885007FC8F9 /* ServiceProTeam.storyboard in Resources */,
@@ -664,6 +728,7 @@
 				BF08FAF220D8C95200268F09 /* ServiceProProgress.storyboard in Resources */,
 				BFB850DC20B736C4007FC8F9 /* BreadBoxOwner.storyboard in Resources */,
 				BFB8505820ABE02A007FC8F9 /* Main.storyboard in Resources */,
+				BF663CC720DC4FA400B45B72 /* TheBossOwner.storyboard in Resources */,
 				BFB850E420B73869007FC8F9 /* ServiceProCustomers.storyboard in Resources */,
 				BFB850C220B26249007FC8F9 /* OwnerProgress.storyboard in Resources */,
 			);
@@ -685,6 +750,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		BF6F556520DDCFF600C4E2D5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework/strip-frameworks.sh\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BFB8504B20ABE029007FC8F9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -694,11 +775,15 @@
 				BFB850D020B51F8B007FC8F9 /* RenterMaintenanceProgressController.swift in Sources */,
 				BFB850D420B52049007FC8F9 /* RenterInvoiceEstimateController.swift in Sources */,
 				BFB850D220B51FC4007FC8F9 /* RenterProgressCell.swift in Sources */,
+				BF9EDE0E20D9985A0026CEA9 /* ServiceProMaintenanceAssessmentController.swift in Sources */,
 				BFB850BC20B260DA007FC8F9 /* OwnerHistoryCell.swift in Sources */,
+				BF663CCF20DC54D400B45B72 /* TheBossSPController.swift in Sources */,
 				BF08FADA20CDF7E800268F09 /* OwnerCustomersController.swift in Sources */,
 				BFB850CC20B4C10D007FC8F9 /* RenterMaintenanceRequestController.swift in Sources */,
+				BF663CD120DC554700B45B72 /* TheBossSPCell.swift in Sources */,
 				BFB850BA20B260A1007FC8F9 /* OwnerHIstoryController.swift in Sources */,
 				BFB8508D20ABE9EB007FC8F9 /* LandingPageController.swift in Sources */,
+				BFE47D9E20DC3CC000B8EA19 /* RenterRequestController.swift in Sources */,
 				BFB850B220B25F21007FC8F9 /* OwnerMaintenanceRequestCell.swift in Sources */,
 				BFB850C620B2633F007FC8F9 /* NewRequestsCell.swift in Sources */,
 				BFB850C020B261D2007FC8F9 /* InvoiceEstimateCell.swift in Sources */,
@@ -706,17 +791,23 @@
 				BF08FAE420D0C08C00268F09 /* ServiceProCustomersController.swift in Sources */,
 				BFB8505520ABE029007FC8F9 /* ViewController.swift in Sources */,
 				BF08FAE220D0BBC700268F09 /* ServiceProCompanyDetailsController.swift in Sources */,
+				BF663CCB20DC52B100B45B72 /* TheBossOwnerController.swift in Sources */,
+				BF663CD320DCAE6300B45B72 /* ServiceProMaterialsController.swift in Sources */,
 				BF08FAEA20D3372700268F09 /* Model.swift in Sources */,
 				BF08FAE620D0C66F00268F09 /* ServiceProTeamController.swift in Sources */,
 				BFB850EA20B73F4F007FC8F9 /* OwnerProfileController.swift in Sources */,
 				BFB850BE20B26164007FC8F9 /* InvoiceEstimateController.swift in Sources */,
+				BF663CCD20DC533600B45B72 /* TheBossOwnerCell.swift in Sources */,
 				BF08FAE020D0A02300268F09 /* RenterTeamController.swift in Sources */,
+				BFE47DA020DC3CEF00B8EA19 /* RenterMaintenanceHistory.swift in Sources */,
+				BF663CC520DC470800B45B72 /* RenterHistoryCell.swift in Sources */,
 				BFB850B020B25EDB007FC8F9 /* OwnerMaintenanceRequestController.swift in Sources */,
 				BF08FAD820CDF11D00268F09 /* CompanyDetailsController.swift in Sources */,
 				BFB850EE20B73FCD007FC8F9 /* ServiceProProfileController.swift in Sources */,
 				BFB850C420B26290007FC8F9 /* OwnerProgressController.swift in Sources */,
 				BF08FADC20CDFD0B00268F09 /* OwnerTeamController.swift in Sources */,
 				BFB850C820B26380007FC8F9 /* OwnerProgressDataCell.swift in Sources */,
+				BF663CD520DCAF1D00B45B72 /* MaterialsCell.swift in Sources */,
 				BFB8505320ABE029007FC8F9 /* AppDelegate.swift in Sources */,
 				BFB850B620B25FC6007FC8F9 /* OwnerMessagesController.swift in Sources */,
 				BFB8508B20ABE922007FC8F9 /* ChooseUserController.swift in Sources */,
@@ -896,6 +987,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8HWGTPK72S;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = maryswatch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -914,6 +1009,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8HWGTPK72S;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = maryswatch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

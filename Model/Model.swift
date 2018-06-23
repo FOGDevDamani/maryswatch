@@ -7,15 +7,17 @@
 //
 
 import UIKit
+import RealmSwift
 
-struct RenterRequest {
-    let address: String
-    let reported: Bool
-    let preferredTimeAndDate: NSDate
-    let pets: Bool
-    let authorizedEntry: Bool
-    let contactNumber: String
-    let priority: String
-    let room:Int
-    let description: String
+@objcMembers class RenterRequest: Object {
+    dynamic var requestAddress = ""
+    dynamic var previouslyReported = false
+    dynamic var preferredTimeAndDate = ""
+    dynamic var pets = false
+    dynamic var authorizedEntry = false
+    dynamic var preferredContactNumber = ""
+    dynamic var requestPriority = ""
+    dynamic var room = 0
+    dynamic var problemDescription = ""
+    dynamic var requestType = ""
 }
