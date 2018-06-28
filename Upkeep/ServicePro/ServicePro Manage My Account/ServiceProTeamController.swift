@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ServiceProTeamController: UIViewController, UITextFieldDelegate {
     
@@ -20,7 +21,7 @@ class ServiceProTeamController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var spTeamMemberZipcode: UITextField!
     @IBOutlet weak var spTeamMemberCellPhone: UITextField!
     
-    var defaults = UserDefaults.standard
+   
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,55 +36,38 @@ class ServiceProTeamController: UIViewController, UITextFieldDelegate {
     
 
     func storeData() {
-        defaults.set(spAssignTeamMember.text!, forKey: "spAssignTeamMember")
-        defaults.set(spTeamMemberFirstName.text!, forKey: "spTMFirstName")
-        defaults.set(spTeamMemberLastName.text!, forKey: "spTMLastName")
-        defaults.set(spTeamMemberEmail.text!, forKey: "spTMEmail")
-        defaults.set(spTeamMemberAddress.text!, forKey: "spTMAddress")
-        defaults.set(spTeamMemberState.text!, forKey: "spTMState")
-        defaults.set(spTeamMemberCity.text!, forKey: "spTMCity")
-        defaults.set(spTeamMemberZipcode.text!, forKey: "spTMZipcode")
-        defaults.set(spTeamMemberCellPhone.text!, forKey: "spTMCellPhone")
+        let spTeam = SPTeam()
+        
+        spTeam.setValue(self.spAssignTeamMember!.text, forKey: "spAssignTeamMember")
+        spTeam.setValue(self.spTeamMemberFirstName!.text, forKey: "spTeamMemberFirstName")
+        spTeam.setValue(self.spTeamMemberLastName!.text, forKey: "spTeamMemberLastName")
+        spTeam.setValue(self.spTeamMemberEmail!.text, forKey: "spTeamMemberEmail")
+        spTeam.setValue(self.spTeamMemberAddress!.text, forKey: "spTeamMemberAddress")
+        spTeam.setValue(self.spTeamMemberState!.text, forKey: "spTeamMemberState")
+        spTeam.setValue(self.spTeamMemberCity!.text, forKey: "spTeamMemberCity")
+        spTeam.setValue(self.spTeamMemberZipcode!.text, forKey: "spTeamMemberZipcode")
+        spTeam.setValue(self.spTeamMemberCellPhone.text, forKey: "spTeamMemberCellPhone")
+        
+        let realm = try! Realm()
+        
+        do {
+            try realm.write {
+                realm.add(spTeam)
+                print("added \(spTeam.spAssignTeamMember) to Realm Database")
+                print("added \(spTeam.spTeamMemberFirstName) to Realm Database")
+                print("added \(spTeam.spTeamMemberLastName) to Realm Database")
+                print("added \(spTeam.spTeamMemberEmail) to Realm Database")
+                print("added \(spTeam.spTeamMemberAddress) to Realm Database")
+                print("added \(spTeam.spTeamMemberState) to Realm Database")
+                print("added \(spTeam.spTeamMemberCity) to Realm Database")
+                print("added \(spTeam.spTeamMemberZipcode) to Realm Database")
+                print("added \(spTeam.spTeamMemberCellPhone) to Realm Database")
+            }
+        } catch {
+            print(error)
+        }
         
     }
     
-    
-    func getData() {
-        if let data = defaults.value(forKey: "spAssignTeamMember") {
-            spAssignTeamMember.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "spTMFirstName") {
-            spTeamMemberFirstName.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "spTMLastName") {
-            spTeamMemberLastName.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "spTMEmail") {
-            spTeamMemberEmail.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "spTMAddress") {
-            spTeamMemberAddress.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "spTMState") {
-            spTeamMemberState.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "spTMCity") {
-            spTeamMemberCity.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "spTMZipcode") {
-            spTeamMemberZipcode.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "spTMCellPhone") {
-            spTeamMemberCellPhone.text = data as? String
-        } else {}
-    }
     
 }

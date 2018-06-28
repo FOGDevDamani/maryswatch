@@ -74,7 +74,6 @@
                                                     <outlet property="jobAddress" destination="DrC-Ga-kHO" id="fz1-tF-xgy"/>
                                                     <outlet property="jobNumber" destination="Qp2-BQ-TX3" id="vbo-fO-P28"/>
                                                     <outlet property="jobSummary" destination="Ra1-xu-RSj" id="Nof-Um-8wf"/>
-                                                    <segue destination="Xve-ll-Uzw" kind="show" id="ZQm-yo-O9e"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -165,6 +164,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="renterHIstoryView" destination="d9f-az-M5o" id="FNs-T2-qpB"/>
+                        <segue destination="Xve-ll-Uzw" kind="show" identifier="HistoryData" id="oBW-lF-dLT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ggn-pM-adn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -174,7 +174,7 @@
         <!--Request-->
         <scene sceneID="H7P-4T-BKI">
             <objects>
-                <viewController id="Xve-ll-Uzw" customClass="RenterMaintenanceHistory" customModule="maryswatch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RenterMaintenanceHistory" id="Xve-ll-Uzw" customClass="RenterMaintenanceHistory" customModule="maryswatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ezc-PX-ANE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

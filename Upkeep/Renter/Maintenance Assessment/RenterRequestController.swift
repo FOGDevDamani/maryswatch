@@ -13,7 +13,9 @@ class RenterRequestController: UIViewController, UITableViewDelegate, UITableVie
 
     @IBOutlet weak var renterHIstoryView: UITableView!
     
-    var renterRequestArray = [RenterRequest]()
+    var renterRequestArray: Results<RenterRequest>?
+    var uuidForRequest = String()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,9 +29,17 @@ class RenterRequestController: UIViewController, UITableViewDelegate, UITableVie
         // Dispose of any resources that can be recreated.
     }
     
-
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return renterRequestArray.count
+        return renterRequestArray!.count
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        uuidForRequest = renterRequestArray![indexPath.row].requestId
+        
+        performSegue(withIdentifier: "HistoryData", sender: self)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -39,8 +49,8 @@ class RenterRequestController: UIViewController, UITableViewDelegate, UITableVie
             fatalError("the dequed cell is not an instance of RenterHistoryCell")
         }
         
-        let address = renterRequestArray[indexPath.row]
-        let date = renterRequestArray[indexPath.row]
+        let address = renterRequestArray![indexPath.row]
+        let date = renterRequestArray![indexPath.row]
         
         cell.jobNumber.setTitle("1", for: .normal)
         cell.jobAddress.text = address.requestAddress
@@ -51,8 +61,20 @@ class RenterRequestController: UIViewController, UITableViewDelegate, UITableVie
     
     func fetchData() {
         let realm = try! Realm()
+       
         
-        renterRequestArray = Array(realm.objects(RenterRequest.self))
+        renterRequestArray = realm.objects(RenterRequest.self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let realm = try! Realm()
+        let request = realm.objects(RenterRequest.self)
+        
+        if segue.identifier == "HistoryData" {
+            if let renterMaintenanceHistory = segue.destination as? RenterMaintenanceHistory {
+                renterMaintenanceHistory.request = request.filter("requestId = %@", uuidForRequest)
+            }
+        }
     }
 
 }

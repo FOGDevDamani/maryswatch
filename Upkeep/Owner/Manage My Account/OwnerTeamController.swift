@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class OwnerTeamController: UIViewController, UITextFieldDelegate {
     
@@ -22,12 +23,12 @@ class OwnerTeamController: UIViewController, UITextFieldDelegate {
     
     
     
-    var defaults = UserDefaults.standard
+   
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getData()
+        
 
         
     }
@@ -50,64 +51,37 @@ class OwnerTeamController: UIViewController, UITextFieldDelegate {
     
     
     func storeData() {
-        defaults.set(assignOwnerTeamMember.text!, forKey: "assigmOwnerTM")
-        defaults.set(ownerTeamMemberFirstName.text!, forKey: "OTMFirstName")
-        defaults.set(ownerTeamMemberLastName.text!, forKey: "OTMLastName")
-        defaults.set(ownerTeamMemberEmail.text!, forKey: "OTMEmail")
-        defaults.set(ownerTeamMemberAddress.text!, forKey: "OTMAddress")
-        defaults.set(ownerTeamMemberState.text!, forKey: "OTMState")
-        defaults.set(ownerTeamMemberCity.text!, forKey: "OTMCity")
-        defaults.set(ownerTeamMemberZipcode.text!, forKey: "OTMZipcode")
-        defaults.set(ownerTeamMemberCellPhone.text!, forKey: "OTMCellPhone")
+        let ownerTeam = OwnerTeam()
         
+        ownerTeam.setValue(self.assignOwnerTeamMember!.text, forKey: "assignOwnerTeamMember")
+        ownerTeam.setValue(self.ownerTeamMemberFirstName!.text, forKey: "ownerTeamMemberFirstName")
+        ownerTeam.setValue(self.ownerTeamMemberLastName!.text, forKey: "ownerTeamMemberLastName")
+        ownerTeam.setValue(self.ownerTeamMemberEmail!.text, forKey: "ownerTeamMemberEmail")
+        ownerTeam.setValue(self.ownerTeamMemberAddress!.text, forKey: "ownerTeamMemberAddress")
+        ownerTeam.setValue(self.ownerTeamMemberState!.text, forKey: "ownerTeamMemberState")
+        ownerTeam.setValue(self.ownerTeamMemberCity!.text, forKey: "ownerTeamMemberCity")
+        ownerTeam.setValue(self.ownerTeamMemberZipcode!.text, forKey: "ownerTeamMemberZipcode")
+        ownerTeam.setValue(self.ownerTeamMemberCellPhone!.text, forKey: "ownerTeamMemberCellPhone")
+        
+        let realm = try! Realm()
+        
+        do {
+            try realm.write {
+                realm.add(ownerTeam)
+                print("added \(ownerTeam.assignOwnerTeamMember) to Realm Database")
+                print("added \(ownerTeam.ownerTeamMemberFirstName) to Realm Database")
+                print("added \(ownerTeam.ownerTeamMemberLastName) to Realm Database")
+                print("added \(ownerTeam.ownerTeamMemberEmail) to Realm Database")
+                print("added \(ownerTeam.ownerTeamMemberAddress) to Realm Database")
+                print("added \(ownerTeam.ownerTeamMemberState) to Realm Database")
+                print("added \(ownerTeam.ownerTeamMemberCity) to Realm Database")
+                print("added \(ownerTeam.ownerTeamMemberZipcode) to Realm Database")
+                print("added \(ownerTeam.ownerTeamMemberCellPhone) to Realm Database")
+            }
+        } catch {
+            print(error)
+        }
     }
-    
-    
-    func getData() {
-        if let data = defaults.value(forKey: "assinOwnerTM") {
-            assignOwnerTeamMember.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "OTMFirstName") {
-            ownerTeamMemberFirstName.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "OTMLastName") {
-            ownerTeamMemberLastName.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "OTMEmail") {
-            ownerTeamMemberEmail.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "OTMAddress") {
-            ownerTeamMemberAddress.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "OTMState") {
-            ownerTeamMemberState.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "OTMCity") {
-            ownerTeamMemberCity.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "OTMZipcode") {
-            ownerTeamMemberZipcode.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "OTMCellPhone") {
-            ownerTeamMemberCellPhone.text = data as? String
-        } else {}
-    }
-    
-    
-    
-    
-    
-    
-    
-    
 
 
 }

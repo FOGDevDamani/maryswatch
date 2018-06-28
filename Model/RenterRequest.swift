@@ -1,5 +1,5 @@
 //
-//  Model.swift
+//  RenterRequest.swift
 //  maryswatch
 //
 //  Created by Damani Turner on 6/14/18.
@@ -10,6 +10,7 @@ import UIKit
 import RealmSwift
 
 @objcMembers class RenterRequest: Object {
+    dynamic var requestId: String = UUID().uuidString
     dynamic var requestAddress = ""
     dynamic var previouslyReported = false
     dynamic var preferredTimeAndDate = ""
@@ -20,4 +21,8 @@ import RealmSwift
     dynamic var room = 0
     dynamic var problemDescription = ""
     dynamic var requestType = ""
+    
+    override static func primaryKey() -> String {
+        return "requestId"
+    }
 }

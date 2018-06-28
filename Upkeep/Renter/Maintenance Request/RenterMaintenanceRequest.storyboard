@@ -864,22 +864,6 @@
             </objects>
             <point key="canvasLocation" x="-8688" y="465"/>
         </scene>
-        <!--RenterMaintenanceHistory-->
-        <scene sceneID="eVf-wc-36m">
-            <objects>
-                <viewControllerPlaceholder storyboardName="RenterMaintenanceHistory" id="owi-oZ-akD" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BJo-Kh-dfu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-8544" y="-650"/>
-        </scene>
-        <!--Renter-MyTeam-->
-        <scene sceneID="fHD-r4-O4l">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Renter-MyTeam" id="EvP-bR-M5q" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6yw-Ft-ij6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-8520" y="-570"/>
-        </scene>
         <!--RenterMaintenanceProgress-->
         <scene sceneID="bA9-um-JQj">
             <objects>

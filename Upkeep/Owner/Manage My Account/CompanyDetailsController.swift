@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class CompanyDetailsController: UIViewController, UITextFieldDelegate {
 
@@ -29,8 +30,6 @@ class CompanyDetailsController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       getData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,60 +46,42 @@ class CompanyDetailsController: UIViewController, UITextFieldDelegate {
     
 
     func storeData() {
-        defaults.set(typeOfCompany.text!, forKey: "typeOfCompany")
-        defaults.set(companyName.text!, forKey: "companyName")
-        defaults.set(companyAddress.text!, forKey: "companyAddress")
-        defaults.set(companyState.text!, forKey: "companyState")
-        defaults.set(companyCity, forKey: "companyCity")
-        defaults.set(companyZipcode, forKey: "companyZipcode")
-        defaults.set(companyWebsite, forKey: "companyWebsite")
-        defaults.set(businessPhone.text!, forKey: "businessPhone")
-        defaults.set(EIN.text, forKey: "EIN")
-        defaults.set(numberOfEmployees.text, forKey: "numberOfEmployees")
+        let ownerCompanyDetails = OwnerCompanyDetails()
         
+        ownerCompanyDetails.setValue(self.typeOfCompany!.text, forKey: "typeOfOwner")
+        ownerCompanyDetails.setValue(self.companyName!.text, forKey: "companyName")
+        ownerCompanyDetails.setValue(self.companyAddress!.text, forKey: "companyAddress")
+        ownerCompanyDetails.setValue(self.companyState!.text, forKey: "companyState")
+        ownerCompanyDetails.setValue(self.companyCity!.text, forKey: "companyCity")
+        ownerCompanyDetails.setValue(self.companyZipcode!.text, forKey: "typeOfOwner")
+        ownerCompanyDetails.setValue(self.companyWebsite!.text, forKey: "companyWebsite")
+        ownerCompanyDetails.setValue(self.businessPhone!.text, forKey: "businessPhone")
+        ownerCompanyDetails.setValue(self.EIN!.text, forKey: "EIN")
+        ownerCompanyDetails.setValue(self.numberOfEmployees!.text, forKey: "numberOfEmployes")
+        
+        let realm = try! Realm()
+        
+        do {
+            try realm.write {
+                realm.add(ownerCompanyDetails)
+                print("added \(ownerCompanyDetails.typeOfCompany) to Realm Database")
+                print("added \(ownerCompanyDetails.companyName) to Realm Database")
+                print("added \(ownerCompanyDetails.companyAddress) to Realm Database")
+                print("added \(ownerCompanyDetails.companyState) to Realm Database")
+                print("added \(ownerCompanyDetails.companyCity) to Realm Database")
+                print("added \(ownerCompanyDetails.companyZipcode) to Realm Database")
+                print("added \(ownerCompanyDetails.companyWebsite) to Realm Database")
+                print("added \(ownerCompanyDetails.businessPhone) to Realm Database")
+                print("added \(ownerCompanyDetails.EIN) to Realm Database")
+                print("added \(ownerCompanyDetails.numberOfEmployees) to Realm Database")
+            }
+        } catch {
+            print(error)
+        }
     }
     
     
-    func getData() {
-        if let data = defaults.value(forKey: "typeOfCompany") {
-            typeOfCompany.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "companyName") {
-            companyName.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "companyAddress") {
-            companyAddress.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "companyState") {
-            companyState.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "companyCity") {
-            companyCity.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "companyZipcode") {
-            companyZipcode.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "companyWebsite") {
-            companyWebsite.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "businessPhone") {
-           businessPhone.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "EIN") {
-            EIN.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "numberOfEmployees") {
-            numberOfEmployees.text = data as? String
-        } else {}
-    }
+    
+    
 
 }

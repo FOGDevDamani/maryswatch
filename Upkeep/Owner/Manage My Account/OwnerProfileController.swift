@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class OwnerProfileController: UIViewController, UITextFieldDelegate {
     
@@ -27,7 +28,7 @@ class OwnerProfileController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        getData()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,71 +42,44 @@ class OwnerProfileController: UIViewController, UITextFieldDelegate {
     }
     
     func storeData() {
-        defaults.set(typeOfOwner.text!, forKey: "typeOfOwner")
-        defaults.set(firstName.text!, forKey: "firstName")
-        defaults.set(lastName.text!, forKey: "lastName")
-        defaults.set(email.text!, forKey: "email")
-        defaults.set(cellPhone.text!, forKey: "cellPhone")
-        defaults.set(address.text!, forKey: "address")
-        defaults.set(state.text!, forKey: "state")
-        defaults.set(city.text!, forKey: "city")
-        defaults.set(zipCode.text!, forKey: "zipCode")
-        defaults.set(country.text!, forKey: "country")
-        defaults.set(userName.text!, forKey: "userName")
-        defaults.set(password.text!, forKey: "password")
+        let ownerProfile = OwnerProfile()
+        
+        ownerProfile.setValue(self.typeOfOwner!.text, forKey: "typeOfOwner")
+        ownerProfile.setValue(self.firstName!.text, forKey: "firstName")
+        ownerProfile.setValue(self.lastName!.text, forKey: "lastName")
+        ownerProfile.setValue(self.email!.text, forKey: "email")
+        ownerProfile.setValue(self.cellPhone!.text, forKey: "cellPhone")
+        ownerProfile.setValue(self.address!.text, forKey: "address")
+        ownerProfile.setValue(self.state!.text, forKey: "state")
+        ownerProfile.setValue(self.city!.text, forKey: "city")
+        ownerProfile.setValue(self.zipCode!.text, forKey: "zipCode")
+        ownerProfile.setValue(self.country!.text, forKey: "country")
+        ownerProfile.setValue(self.userName!.text, forKey: "userName")
+        ownerProfile.setValue(self.password!.text, forKey: "password")
+        
+        let realm = try! Realm()
+        
+        do {
+        try realm.write {
+            realm.add(ownerProfile)
+            print("added \(ownerProfile.typeOfOwner) to Realm Database")
+            print("added \(ownerProfile.firstName) to Realm Database")
+            print("added \(ownerProfile.lastName) to Realm Database")
+            print("added \(ownerProfile.email) to Realm Database")
+            print("added \(ownerProfile.cellPhone) to Realm Database")
+            print("added \(ownerProfile.address) to Realm Database")
+            print("added \(ownerProfile.state) to Realm Database")
+            print("added \(ownerProfile.city) to Realm Database")
+            print("added \(ownerProfile.zipCode) to Realm Database")
+            print("added \(ownerProfile.country) to Realm Database")
+            print("added \(ownerProfile.userName) to Realm Database")
+            print("added \(ownerProfile.password) to Realm Database")
+            }
+        } catch {
+            print(error)
+        }
         
     }
     
-    func getData() {
-        if let data = defaults.value(forKey: "typeOfOwner") {
-            typeOfOwner.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "firstName") {
-            firstName.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "lastName") {
-            lastName.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "email") {
-            email.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "cellPhone") {
-            cellPhone.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "address") {
-            address.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "state") {
-            state.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "city") {
-            city.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "zipCode") {
-            zipCode.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "country") {
-            country.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "userName") {
-            userName.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "password") {
-            password.text = data as? String
-        } else {}
-      
-        
-    }
 
 }

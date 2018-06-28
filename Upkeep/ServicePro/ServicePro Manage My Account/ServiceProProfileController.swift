@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ServiceProProfileController: UIViewController, UITextFieldDelegate {
 
@@ -33,7 +34,7 @@ class ServiceProProfileController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        getData()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,94 +50,40 @@ class ServiceProProfileController: UIViewController, UITextFieldDelegate {
     
     
     func storeData() {
-        defaults.set(spTypeOfCompany.text!, forKey: "SPTypeOfCompany")
-        defaults.set(spFirstName.text!, forKey: "SPFirstName")
-        defaults.set(spLastName.text!, forKey: "SPLastName")
-        defaults.set(spEmail.text!, forKey: "SPEmail")
-        defaults.set(spCellPhone.text!, forKey: "SPCellPhone")
-        defaults.set(spAddress.text!, forKey: "SPAddress")
-        defaults.set(spState.text!, forKey: "SPState")
-        defaults.set(spCity.text!, forKey: "SPCity")
-        defaults.set(spZipcode.text!, forKey: "SPZipcode")
-        defaults.set(spCounty.text!, forKey: "SPCounty")
-        defaults.set(spUsername.text!, forKey: "SPUsername")
-        defaults.set(spPassword.text!, forKey: "SPPassword")
+        let spProfile = SPProfile()
+        
+        spProfile.setValue(self.spTypeOfCompany!.text, forKey: "spTypeOfCompany")
+        spProfile.setValue(self.spFirstName!.text, forKey: "spFirstName")
+        spProfile.setValue(self.spLastName!.text, forKey: "spLastName")
+        spProfile.setValue(self.spEmail!.text, forKey: "spEmail")
+        spProfile.setValue(self.spCellPhone!.text, forKey: "spCellPhone")
+        spProfile.setValue(self.spAddress!.text, forKey: "spAddress")
+        spProfile.setValue(self.spState!.text, forKey: "spState")
+        spProfile.setValue(self.spZipcode!.text, forKey: "spZipcode")
+        spProfile.setValue(self.spCounty!.text, forKey: "spCounty")
+        spProfile.setValue(self.spUsername!.text, forKey: "spUserName")
+        spProfile.setValue(self.spPassword!.text, forKey: "spPassword")
+        
+        let realm = try! Realm()
+        
+        do {
+            try realm.write {
+                realm.add(spProfile)
+                print("added \(spProfile.spTypeOfCompany) to Realm Database")
+                print("added \(spProfile.spFirstName) to Realm Database")
+                print("added \(spProfile.spLastName) to Realm Database")
+                print("added \(spProfile.spEmail) to Realm Database")
+                print("added \(spProfile.spCellPhone) to Realm Database")
+                print("added \(spProfile.spAddress) to Realm Database")
+                print("added \(spProfile.spState) to Realm Database")
+                print("added \(spProfile.spZipcode) to Realm Database")
+                print("added \(spProfile.spCounty) to Realm Database")
+                print("added \(spProfile.spUsername) to Realm Database")
+                print("added \(spProfile.spPassword) to Realm Database")
+            }
+        } catch {
+            print(error)
+        }
     }
-    
-    func getData() {
-        if let data = defaults.value(forKey: "SPTypeOfCompany") {
-            spTypeOfCompany.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "SPFirstName") {
-            spFirstName.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "SPLastName") {
-            spLastName.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "SPEmail") {
-            spEmail.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "SPCellPhone") {
-            spCellPhone.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "SPAddress") {
-            spAddress.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "SPState") {
-            spState.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "SPCity") {
-            spCity.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "SPZipcode") {
-            spZipcode.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "SPCounty") {
-            spCounty.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "SPUsername") {
-            spUsername.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "SPPassword") {
-            spPassword.text = data as? String
-        } else {}
-        
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
 
 }

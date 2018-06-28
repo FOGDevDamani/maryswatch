@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ServiceProCustomersController: UIViewController, UITextFieldDelegate {
     
@@ -20,12 +21,11 @@ class ServiceProCustomersController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var spCustomerCounty: UITextField!
     @IBOutlet weak var spCustomerCellPhone: UITextField!
     
-    var defaults = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        getData()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,56 +48,38 @@ class ServiceProCustomersController: UIViewController, UITextFieldDelegate {
     
     
     func storeData() {
-        defaults.set(spCustomerFirstName.text!, forKey: "spCFirstName")
-        defaults.set(spCustomerLastName.text!, forKey: "spCLastName")
-        defaults.set(spCustomerEmail.text!, forKey: "spCEmail")
-        defaults.set(spCustomerAddress.text!, forKey: "spCAddress")
-        defaults.set(spCustomerState.text!, forKey: "spCState")
-        defaults.set(spCustomerCity.text!, forKey: "spCCity")
-        defaults.set(spCustomerZipcode.text!, forKey: "spCZipcode")
-        defaults.set(spCustomerCounty.text!, forKey: "spCCounty")
-        defaults.set(spCustomerCellPhone.text!, forKey: "spCCellPhone")
+        let spCustomers = SPCustomers()
         
+        spCustomers.setValue(self.spCustomerFirstName!.text, forKey: "spCustomerFirstName")
+        spCustomers.setValue(self.spCustomerLastName!.text, forKey: "spCustomerLastName")
+        spCustomers.setValue(self.spCustomerEmail!.text, forKey: "spCustomerEmail")
+        spCustomers.setValue(self.spCustomerAddress!.text, forKey: "spCustomerAddress")
+        spCustomers.setValue(self.spCustomerState!.text, forKey: "spCustomerState")
+        spCustomers.setValue(self.spCustomerCity!.text, forKey: "spCustomerCity")
+        spCustomers.setValue(self.spCustomerZipcode!.text, forKey: "spCustomerZipcode")
+        spCustomers.setValue(self.spCustomerCounty!.text, forKey: "spCustomerCounty")
+        spCustomers.setValue(self.spCustomerCellPhone!.text, forKey: "spCustomerCcellPhone")
+        
+        let realm = try! Realm()
+        
+        do {
+            try realm.write {
+                realm.add(spCustomers)
+                print("added \(spCustomers.spCustomerFirstName) to Realm Database")
+                print("added \(spCustomers.spCustomerLastName) to Realm Database")
+                print("added \(spCustomers.spCustomerEmail) to Realm Database")
+                print("added \(spCustomers.spCustomerAddress) to Realm Database")
+                print("added \(spCustomers.spCustomerState) to Realm Database")
+                print("added \(spCustomers.spCustomerCity) to Realm Database")
+                print("added \(spCustomers.spCustomerZipcode) to Realm Database")
+                print("added \(spCustomers.spCustomerCounty) to Realm Database")
+                print("added \(spCustomers.spCustomerCellPhone) to Realm Database")
+            }
+        } catch {
+            print(error)
+        }
     }
     
-    func getData() {
-        if let data = defaults.value(forKey: "spCFirstName") {
-            spCustomerFirstName.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "spCLastName") {
-            spCustomerLastName.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "spCEmail") {
-            spCustomerEmail.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "spCAddress") {
-            spCustomerAddress.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "spCState") {
-            spCustomerState.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "spCCity") {
-            spCustomerCity.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "spCZipcode") {
-            spCustomerZipcode.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "spCCounty") {
-            spCustomerCounty.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "spCCellPhone") {
-            spCustomerCellPhone.text = data as? String
-        } else {}
-        
-    }
     
 
 }

@@ -39,8 +39,6 @@ class RenterMaintenanceRequestController: UIViewController, UITextFieldDelegate,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
     }
     
    
@@ -54,7 +52,6 @@ class RenterMaintenanceRequestController: UIViewController, UITextFieldDelegate,
         self.present(alert, animated: true)
         
         saveRequest()
-        sendRequestToHistory()
     }
     
     
@@ -100,19 +97,6 @@ class RenterMaintenanceRequestController: UIViewController, UITextFieldDelegate,
         } catch {
             print(error)
         }
-    }
-    
-    func sendRequestToHistory() {
-    
-
-    }
-    
-    func sendToOwner() {
-        
-    }
-    
-    func sendToSP() {
-        
     }
     
 }

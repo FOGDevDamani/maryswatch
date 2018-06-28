@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class RenterTeamController: UIViewController, UITextFieldDelegate {
     
@@ -25,7 +26,6 @@ class RenterTeamController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        getData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,56 +42,41 @@ class RenterTeamController: UIViewController, UITextFieldDelegate {
     
     
     func storeData() {
-        defaults.set(renterTeamAssign.text!, forKey: "renterTeamsAssign")
-        defaults.set(renterTeamFirstName.text!, forKey: "RTFirstName")
-        defaults.set(renterTeamLastName.text!, forKey: "RTLastName")
-        defaults.set(renterTeamEmail.text!, forKey: "RTEMail")
-        defaults.set(renterTeamAddress.text!, forKey: "RTAddress")
-        defaults.set(renterTeamState.text!, forKey: "RTState")
-        defaults.set(renterTeamCity.text!, forKey: "RTCity")
-        defaults.set(renterTeamZipcode.text!, forKey: "RTZipcode")
-        defaults.set(renterTeamCellPhone.text!, forKey: "RTCellPhone")
-    }
-    
-    func getData() {
-        if let data = defaults.value(forKey: "renterTeamAssign") {
-            renterTeamAssign.text = data as? String
-        } else {}
+        let renterTeam = RenterTeam()
         
-        if let data = defaults.value(forKey: "RTFirstName") {
-            renterTeamFirstName.text = data as? String
-        } else {}
+        renterTeam.setValue(self.renterTeamAssign!.text, forKey: "renterTeamAssign")
+        renterTeam.setValue(self.renterTeamFirstName!.text, forKey: "renterTeamFirstName")
+        renterTeam.setValue(self.renterTeamLastName!.text, forKey: "renterTeamLastName")
+        renterTeam.setValue(self.renterTeamEmail!.text, forKey: "renterTeamEmail")
+        renterTeam.setValue(self.renterTeamAddress!.text, forKey: "renterTeamAddress")
+        renterTeam.setValue(self.renterTeamState!.text, forKey: "renterTeamState")
+        renterTeam.setValue(self.renterTeamCity!.text, forKey: "renterTeamCity")
+        renterTeam.setValue(self.renterTeamZipcode!.text, forKey: "renterTeamZipcode")
+        renterTeam.setValue(self.renterTeamCellPhone!.text, forKey: "renterTeamCellPhone")
         
-        if let data = defaults.value(forKey: "RTLastName") {
-            renterTeamLastName.text = data as? String
-        } else {}
+        let realm = try! Realm()
         
-        if let data = defaults.value(forKey: "RTEmail") {
-            renterTeamEmail.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "RTAddress") {
-            renterTeamAddress.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "RTState") {
-            renterTeamState.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "RTCity") {
-            renterTeamCity.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "RTZipcode") {
-            renterTeamZipcode.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "RTCellPhone") {
-            renterTeamCellPhone.text = data as? String
-        } else {}
+        do {
+            try realm.write {
+                realm.add(renterTeam)
+                print("added \(renterTeam.renterTeamAssign) to Realm Database")
+                print("added \(renterTeam.renterTeamFirstName) to Realm Database")
+                print("added \(renterTeam.renterTeamLastName) to Realm Database")
+                print("added \(renterTeam.renterTeamEmail) to Realm Database")
+                print("added \(renterTeam.renterTeamAddress) to Realm Database")
+                print("added \(renterTeam.renterTeamState) to Realm Database")
+                print("added \(renterTeam.renterTeamCity) to Realm Database")
+                print("added \(renterTeam.renterTeamZipcode) to Realm Database")
+                print("added \(renterTeam.renterTeamCellPhone) to Realm Database")
+                
+                
+            }
+        } catch {
+            print(error)
+        }
         
     }
-    
+
     
 
 }

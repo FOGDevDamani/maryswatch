@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class OwnerAssetsController: UIViewController, UITextFieldDelegate {
     
@@ -17,12 +18,12 @@ class OwnerAssetsController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var ownerPropertyZipcode: UITextField!
     @IBOutlet weak var ownerPropertyCounty: UITextField!
     
-    var defaults = UserDefaults.standard
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        getData()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,41 +44,31 @@ class OwnerAssetsController: UIViewController, UITextFieldDelegate {
     
     
     func storeData() {
-        defaults.set(ownerTypeOfProperty.text!, forKey: "OTypeOfProperty")
-        defaults.set(ownerPropertyAddress.text!, forKey: "OPropertyAddress")
-        defaults.set(ownerPropertyState.text!, forKey: "OPropertyState")
-        defaults.set(ownerPropertyCity.text!, forKey: "OPropertyCity")
-        defaults.set(ownerPropertyZipcode.text!, forKey: "OPropertyZipcode")
-        defaults.set(ownerPropertyCounty.text!, forKey: "OPropertyCounty")
+        let ownerAssets = OwnerAssets()
         
+        ownerAssets.setValue(self.ownerTypeOfProperty!.text, forKey: "ownerTypeOfProperty")
+        ownerAssets.setValue(self.ownerPropertyAddress!.text, forKey: "ownerPropertyAddress")
+        ownerAssets.setValue(self.ownerPropertyState!.text, forKey: "ownerPropertyState")
+        ownerAssets.setValue(self.ownerPropertyCity!.text, forKey: "ownerPropertyCity")
+        ownerAssets.setValue(self.ownerPropertyZipcode.text, forKey: "ownerPropertyZipcode")
+        ownerAssets.setValue(self.ownerPropertyCounty!.text, forKey: "ownerPropertyCounty")
+        
+        let realm = try! Realm()
+        
+        do {
+            try realm.write {
+                realm.add(ownerAssets)
+                print("added \(ownerAssets.ownerTypeOfProperty) to Realm Database")
+                print("added \(ownerAssets.ownerPropertyAddress) to Realm Database")
+                print("added \(ownerAssets.ownerPropertyState) to Realm Database")
+                print("added \(ownerAssets.ownerPropertyCity) to Realm Database")
+                print("added \(ownerAssets.ownerPropertyZipcode) to Realm Database")
+                print("added \(ownerAssets.ownerPropertyCounty) to Realm Database")
+            }
+        } catch {
+            print(error)
+        }
     }
-    
-    func getData() {
-        if let data = defaults.value(forKey: "OTypeOfProperty") {
-            ownerTypeOfProperty.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "OPropertyAddress") {
-            ownerPropertyAddress.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "OPropertyState") {
-            ownerPropertyState.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "OPropertyCity") {
-            ownerPropertyCity.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "OPropertyZipcode") {
-            ownerPropertyZipcode.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "OPropertyCounty") {
-            ownerPropertyCounty.text = data as? String
-        } else {}
-    }
-    
 
     
 

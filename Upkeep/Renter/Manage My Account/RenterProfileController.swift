@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class RenterProfileController: UIViewController, UITextFieldDelegate {
     
@@ -23,17 +24,10 @@ class RenterProfileController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var renterPassword: UITextField!
     
     
-    var defaults = UserDefaults.standard
+   
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        getData()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        
     }
     
     
@@ -47,86 +41,40 @@ class RenterProfileController: UIViewController, UITextFieldDelegate {
     
 
     func storeData() {
-        defaults.set(renterFirstName.text!, forKey: "renterFirstName")
-        defaults.set(renterLastName.text!, forKey: "renterLastName")
-        defaults.set(renterEmail.text!, forKey: "renterEmail")
-        defaults.set(renterAddress.text!, forKey: "renterAddress")
-        defaults.set(renterCellPhone.text!, forKey: "renterCellPhone")
-        defaults.set(renterState.text!, forKey: "renterState")
-        defaults.set(renterCity.text!, forKey: "renterCity")
-        defaults.set(renterZipcode.text!, forKey: "renterZipcode")
-        defaults.set(renterCounty.text!, forKey: "renterCounty")
-        defaults.set(renterUsername.text!, forKey: "renterUsername")
-        defaults.set(renterPassword.text!, forKey: "renterPassword")
+        let renterProfile = RenterProfile()
+        
+        renterProfile.setValue(self.renterFirstName!.text, forKey: "renterFirstName")
+        renterProfile.setValue(self.renterLastName!.text, forKey: "renterLastName")
+        renterProfile.setValue(self.renterEmail!.text, forKey: "renterEmail")
+        renterProfile.setValue(self.renterAddress!.text, forKey: "renterAddress")
+        renterProfile.setValue(self.renterCellPhone!.text, forKey: "renterCellPhone")
+        renterProfile.setValue(self.renterState!.text, forKey: "renterState")
+        renterProfile.setValue(self.renterCity!.text, forKey: "renterCity")
+        renterProfile.setValue(self.renterZipcode!.text, forKey: "renterZipcode")
+        renterProfile.setValue(self.renterCounty!.text, forKey: "renterCounty")
+        renterProfile.setValue(self.renterUsername!.text, forKey: "renterUsername")
+        renterProfile.setValue(self.renterPassword!.text, forKey: "renterPassword")
+        
+        
+        let realm = try! Realm()
+        
+        do {
+            try realm.write {
+                realm.add(renterProfile)
+                print("added \(renterProfile.renterFirstName) to Realm Database")
+                print("added \(renterProfile.renterLastName) to Realm Database")
+                print("added \(renterProfile.renterEmail) to Realm Database")
+                print("added \(renterProfile.renterAddress) to Realm Database")
+                print("added \(renterProfile.renterCellPhone) to Realm Database")
+                print("added \(renterProfile.renterState) to Realm Database")
+                print("added \(renterProfile.renterCity) to Realm Database")
+                print("added \(renterProfile.renterZipcode) to Realm Database")
+                print("added \(renterProfile.renterCounty) to Realm Database")
+                print("added \(renterProfile.renterUsername) to Realm Database")
+                print("added \(renterProfile.renterPassword) to Realm Database")
+            }
+        } catch {
+            print(error)
+        }
     }
-    
-    func getData() {
-        if let data = defaults.value(forKey: "renterFirstName") {
-            renterFirstName.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "renterLastName") {
-            renterLastName.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "renterEmail") {
-            renterEmail.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "renterAddress") {
-            renterAddress.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "renterCellPhone") {
-            renterCellPhone.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "renterState") {
-            renterState.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "renterCity") {
-            renterCity.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "renterZipcode") {
-            renterZipcode.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "rentercCounty") {
-            renterCounty.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "renterUsername") {
-            renterFirstName.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "renterPassword") {
-            renterPassword.text = data as? String
-        } else {}
-        
-        
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class OwnerCustomersController: UIViewController, UITextFieldDelegate {
     
@@ -20,12 +21,11 @@ class OwnerCustomersController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var ownerCustomerCounty: UITextField!
     @IBOutlet weak var ownerCustomerCellPhone: UITextField!
     
-    var defaults = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        getData()
+       
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,56 +42,39 @@ class OwnerCustomersController: UIViewController, UITextFieldDelegate {
     
     
     func storeData() {
-        defaults.set(ownerCustomerFirstName.text!, forKey: "OCFirstName")
-        defaults.set(ownerCustomerLastName.text!, forKey: "OCLastName")
-        defaults.set(ownerCustomerEmail, forKey: "OCEmail")
-        defaults.set(ownerCustomerAddress, forKey: "OCAddress")
-        defaults.set(ownerCustomerState, forKey: "OCState")
-        defaults.set(ownerCustomerCity, forKey: "OCCity")
-        defaults.set(ownerCustomerZipcode, forKey: "OCZipcode")
-        defaults.set(ownerCustomerCounty, forKey: "OCCounty")
-        defaults.set(ownerCustomerCellPhone, forKey: "OCCellPhone")
+        let ownerCustomers = OwnerCustomers()
         
+        ownerCustomers.setValue(self.ownerCustomerFirstName!.text, forKey: "ownerCustomerFirstName")
+        ownerCustomers.setValue(self.ownerCustomerLastName!.text, forKey: "ownerCustomerLastName")
+        ownerCustomers.setValue(self.ownerCustomerEmail!.text, forKey: "ownerCustomerEmail")
+        ownerCustomers.setValue(self.ownerCustomerAddress!.text, forKey: "ownerCustomerAddress")
+        ownerCustomers.setValue(self.ownerCustomerState!.text, forKey: "ownerCustomerState")
+        ownerCustomers.setValue(self.ownerCustomerCity!.text, forKey: "ownerCustomerCity")
+        ownerCustomers.setValue(self.ownerCustomerZipcode!.text, forKey: "ownerCustomerZipcode")
+        ownerCustomers.setValue(self.ownerCustomerCounty!.text, forKey: "ownerCustomerCounty")
+        ownerCustomers.setValue(self.ownerCustomerCellPhone!.text, forKey: "ownerCustomerCellPhone")
+        
+        let realm = try! Realm()
+        
+        do {
+            try realm.write {
+                realm.add(ownerCustomers)
+                print("added \(ownerCustomers.ownerCustomerFirstName) to Realm Database")
+                print("added \(ownerCustomers.ownerCustomerLastName) to Realm Database")
+                print("added \(ownerCustomers.ownerCustomerEmail) to Realm Database")
+                print("added \(ownerCustomers.ownerCustomerAddress) to Realm Database")
+                print("added \(ownerCustomers.ownerCustomerState) to Realm Database")
+                print("added \(ownerCustomers.ownerCustomerCity) to Realm Database")
+                print("added \(ownerCustomers.ownerCustomerZipcode) to Realm Database")
+                print("added \(ownerCustomers.ownerCustomerCounty) to Realm Database")
+                print("added \(ownerCustomers.ownerCustomerCellPhone) to Realm Database")
+            }
+        } catch {
+            print(error)
+        }
     }
     
-    func getData() {
-        if let data = defaults.value(forKey: "OCFirstName") {
-            ownerCustomerFirstName.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "OCLastName") {
-            ownerCustomerLastName.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "OCEmail") {
-            ownerCustomerEmail.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "OCAddress") {
-            ownerCustomerAddress.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "OCState") {
-            ownerCustomerState.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "OCCity") {
-            ownerCustomerCity.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "OCZipcode") {
-            ownerCustomerZipcode.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "OCCounty") {
-            ownerCustomerCounty.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "OCCellPhone") {
-            ownerCustomerCellPhone.text = data as? String
-        } else {}
-        
-    }
+    
     
 
    

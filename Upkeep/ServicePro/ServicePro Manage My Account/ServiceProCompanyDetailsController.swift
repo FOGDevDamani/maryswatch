@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ServiceProCompanyDetailsController: UIViewController, UITextFieldDelegate {
     
@@ -21,12 +22,12 @@ class ServiceProCompanyDetailsController: UIViewController, UITextFieldDelegate 
     @IBOutlet weak var spEIN: UITextField!
     @IBOutlet weak var spNumberOfEmployees: UITextField!
     
-    var defaults = UserDefaults.standard
+   
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        getData()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,61 +46,44 @@ class ServiceProCompanyDetailsController: UIViewController, UITextFieldDelegate 
     
 
     func storeData() {
-        defaults.set(spCompanyDetails.text!, forKey: "spCompanyDetails")
-        defaults.set(spCompanyName.text!, forKey: "spCompanyName")
-        defaults.set(spCompanyAddress.text!, forKey: "spCompanyAddress")
-        defaults.set(spCompanyState.text!, forKey: "spCompanyState")
-        defaults.set(spCompanyCity.text!, forKey: "spCompanyCity")
-        defaults.set(spCompanyZipcode.text!, forKey: "spCompanyZipcode")
-        defaults.set(spWebsite.text!, forKey: "spCompanyWebsite")
-        defaults.set(spBusinessPhone.text!, forKey: "spBusinessPhone")
-        defaults.set(spEIN.text, forKey: "spEIN")
-        defaults.set(spNumberOfEmployees.text, forKey: "spNumberOfEmployees")
+        let spCompanyDetails = SPCompanyDetails()
+        
+        spCompanyDetails.setValue(self.spCompanyDetails!.text, forKey: "spCompanyDetails")
+        spCompanyDetails.setValue(self.spCompanyName!.text, forKey: "spCompanyName")
+        spCompanyDetails.setValue(self.spCompanyAddress!.text, forKey: "spCompanyAddress")
+        spCompanyDetails.setValue(self.spCompanyState!.text, forKey: "spCompanyState")
+        spCompanyDetails.setValue(self.spCompanyCity!.text, forKey: "spCompanyCity")
+        spCompanyDetails.setValue(self.spCompanyZipcode!.text, forKey: "spCompanyZipcode")
+        spCompanyDetails.setValue(self.spWebsite!.text, forKey: "spWebsite")
+        spCompanyDetails.setValue(self.spBusinessPhone!.text, forKey: "spBusinessPhone")
+        spCompanyDetails.setValue(self.spEIN!.text, forKey: "spEIN")
+        spCompanyDetails.setValue(self.spNumberOfEmployees!.text, forKey: "spNumberOfEmployees")
+        
+        let realm = try! Realm()
+        
+        do {
+            try realm.write {
+                realm.add(spCompanyDetails)
+                print("added \(spCompanyDetails.spCompanyDetails) to Realm Database")
+                print("added \(spCompanyDetails.spCompanyName) to Realm Database")
+                print("added \(spCompanyDetails.spCompanyAdress) to Realm Database")
+                print("added \(spCompanyDetails.spCompanyState) to Realm Database")
+                print("added \(spCompanyDetails.spCompanyCity) to Realm Database")
+                print("added \(spCompanyDetails.spCompanyZipcode) to Realm Database")
+                print("added \(spCompanyDetails.spWebsite) to Realm Database")
+                print("added \(spCompanyDetails.spBusninessPhone) to Realm Database")
+                print("added \(spCompanyDetails.spEIN) to Realm Database")
+                print("added \(spCompanyDetails.spNumberOfEmployees) to Realm Database")
+            }
+        } catch {
+            print(error)
+        }
+        
         
     }
     
     
-    func getData() {
-        if let data = defaults.value(forKey: "spCompanyDetails") {
-            spCompanyDetails.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "spCompanyName") {
-            spCompanyName.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "spCompanyAddress") {
-            spCompanyAddress.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "spCompanyState") {
-            spCompanyState.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "spCompanyCity") {
-            spCompanyCity.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "spCompanyZipcode") {
-            spCompanyZipcode.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "spCompanyWebsite") {
-            spWebsite.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "spBusinessPhone") {
-            spBusinessPhone.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "spEIN") {
-            spEIN.text = data as? String
-        } else {}
-        
-        if let data = defaults.value(forKey: "spNumberOfEmployees") {
-            spNumberOfEmployees.text = data as? String
-        } else {}
-    }
+   
 
     
     
