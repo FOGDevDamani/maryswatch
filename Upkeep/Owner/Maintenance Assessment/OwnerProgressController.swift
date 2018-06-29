@@ -7,15 +7,20 @@
 //
 
 import UIKit
+import RealmSwift
 
 class OwnerProgressController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     @IBOutlet weak var progressData: UITableView!
     @IBOutlet weak var newRequestsData: UITableView!
     
+    var newRenterRequest: Results<RenterRequest>?
+    var uuidForRequest = String()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        fetchData()
+        newRequestsData.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -24,12 +29,14 @@ class OwnerProgressController: UIViewController,UITableViewDelegate,UITableViewD
     }
     
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return newRenterRequest!.count
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        uuidForRequest = newRenterRequest![indexPath.row].requestId
+        
+        performSegue(withIdentifier: "OwnerNewRequest", sender: self)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -55,6 +62,21 @@ class OwnerProgressController: UIViewController,UITableViewDelegate,UITableViewD
             
         }
         
+    }
+    
+    func fetchData() {
+    let realm = try! Realm()
+        
+    newRenterRequest = realm.objects(RenterRequest.self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "OwnerNewRequest" {
+            if let maintenanceRequestedController = segue.destination as? MaintenanceRequestedController {
+                maintenanceRequestedController.ownerPassedUUID = uuidForRequest
+            }
+        }
     }
 
 }

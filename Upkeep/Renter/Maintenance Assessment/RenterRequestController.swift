@@ -67,12 +67,10 @@ class RenterRequestController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let realm = try! Realm()
-        let request = realm.objects(RenterRequest.self)
         
         if segue.identifier == "HistoryData" {
             if let renterMaintenanceHistory = segue.destination as? RenterMaintenanceHistory {
-                renterMaintenanceHistory.request = request.filter("requestId = %@", uuidForRequest)
+                renterMaintenanceHistory.passedUUID = uuidForRequest
             }
         }
     }

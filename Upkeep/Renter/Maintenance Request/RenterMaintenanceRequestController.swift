@@ -26,7 +26,7 @@ class RenterMaintenanceRequestController: UIViewController, UITextFieldDelegate,
     @IBOutlet weak var manageMyAccount: UIView!
     @IBOutlet weak var closeButton: UIButton!
     
-    var defaults = UserDefaults.standard
+    
     var theBossOwner = TheBossOwnerController()
     
     @IBAction func plusButtonPressed(_ sender: AnyObject) {

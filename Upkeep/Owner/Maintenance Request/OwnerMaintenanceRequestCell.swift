@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class OwnerMaintenanceRequestCell: UITableViewCell {
     
@@ -15,6 +16,16 @@ class OwnerMaintenanceRequestCell: UITableViewCell {
     @IBOutlet weak var ownerRequestRoom: UITextField!
     @IBOutlet weak var ownerRequestDescription: UITextField!
     @IBOutlet weak var ownerRequestCamera: UIButton!
+    
+    
+    func saveTableData() {
+        let saveTableData = OwnerRequest()
+        saveTableData.setValue(self.ownerRequestType!.text, forKey: "ownerRequestType")
+        saveTableData.setValue(self.ownerRequestUnitNumber!.text, forKey: "ownerRequestUnitNumber")
+        saveTableData.setValue(self.ownerRequestRoom!.text, forKey: "ownerReqestRoom")
+        saveTableData.setValue(self.ownerRequestDescription!.text, forKey: "ownerRequestDescription")
+    }
+    
     
 
     override func awakeFromNib() {

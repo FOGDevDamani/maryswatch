@@ -15,7 +15,7 @@
         <!--Current-->
         <scene sceneID="b2v-2t-ykR">
             <objects>
-                <viewController id="TIG-bl-Bth" customClass="Renter_MaintenanceProgressViewController" customModule="maryswatch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="TIG-bl-Bth" customClass="RenterMaintenanceProgressController" customModule="maryswatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qsV-F8-wHZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

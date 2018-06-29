@@ -26,8 +26,6 @@ class RenterMaintenanceHistory: UIViewController {
     @IBOutlet weak var renterHIstoryPreferredContactNumber: UITextField!
     @IBOutlet weak var renterHistoryPreviouslyReported: UISwitch!
     
-
-    var renterHistoryAddress: String?
     
 
     override func viewDidLoad() {
@@ -37,7 +35,17 @@ class RenterMaintenanceHistory: UIViewController {
         
         if (passedUUID.count > 0) {
             request = realm.objects(RenterRequest.self).filter("requestId = %@", passedUUID)
+            RenterHistoryPriority.text = request![0].requestPriority
+            renterHistoryType.text = request![0].requestType
             renterHIstoryAddress.text = request![0].requestAddress
+            renterHistoryRoom.text = String(request![0].room)
+            renterHIstoryProblemDescription.text = request![0].problemDescription
+            renterHistoryPreferredTimeAndDate.text = request![0].preferredTimeAndDate
+            renterHistoryPets.isOn = request![0].pets
+            renterHistoryAuthorizedEntry.isOn = request![0].authorizedEntry
+            renterHIstoryPreferredContactNumber.text = request![0].preferredContactNumber
+            renterHistoryPreviouslyReported.isOn = request![0].previouslyReported
+            
         } else {
             print("No data to pass")
         }

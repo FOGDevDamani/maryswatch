@@ -32,6 +32,11 @@
 		BF3C717F20E4ABA900B65CA1 /* SPTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3C717E20E4ABA900B65CA1 /* SPTeam.swift */; };
 		BF3C718120E4AE1100B65CA1 /* SPCustomers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3C718020E4AE1100B65CA1 /* SPCustomers.swift */; };
 		BF3C718320E4B04500B65CA1 /* SPCompanyDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3C718220E4B04500B65CA1 /* SPCompanyDetails.swift */; };
+		BF3C718520E5B11400B65CA1 /* MaintenanceRequestedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3C718420E5B11400B65CA1 /* MaintenanceRequestedController.swift */; };
+		BF3C718720E5C33000B65CA1 /* SPProgressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3C718620E5C33000B65CA1 /* SPProgressController.swift */; };
+		BF3C718920E5C56900B65CA1 /* SPProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3C718820E5C56900B65CA1 /* SPProgressCell.swift */; };
+		BF3C718B20E5C58B00B65CA1 /* NewRequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3C718A20E5C58B00B65CA1 /* NewRequestCell.swift */; };
+		BF3C718D20E5C99500B65CA1 /* SPMaintenanceRequestedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3C718C20E5C99500B65CA1 /* SPMaintenanceRequestedController.swift */; };
 		BF663CC520DC470800B45B72 /* RenterHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF663CC420DC470800B45B72 /* RenterHistoryCell.swift */; };
 		BF663CC720DC4FA400B45B72 /* TheBossOwner.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF663CC620DC4FA400B45B72 /* TheBossOwner.storyboard */; };
 		BF663CC920DC51EF00B45B72 /* TheBossSP.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF663CC820DC51EF00B45B72 /* TheBossSP.storyboard */; };
@@ -95,6 +100,8 @@
 		BFB850EE20B73FCD007FC8F9 /* ServiceProProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB850ED20B73FCD007FC8F9 /* ServiceProProfileController.swift */; };
 		BFE47D9E20DC3CC000B8EA19 /* RenterRequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE47D9D20DC3CC000B8EA19 /* RenterRequestController.swift */; };
 		BFE47DA020DC3CEF00B8EA19 /* RenterMaintenanceHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE47D9F20DC3CEF00B8EA19 /* RenterMaintenanceHistory.swift */; };
+		BFEC93FC20E5E86F006794B0 /* OwnerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEC93FB20E5E86F006794B0 /* OwnerRequest.swift */; };
+		BFEC93FE20E5F2E9006794B0 /* SPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEC93FD20E5F2E9006794B0 /* SPRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,6 +162,11 @@
 		BF3C717E20E4ABA900B65CA1 /* SPTeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPTeam.swift; sourceTree = "<group>"; };
 		BF3C718020E4AE1100B65CA1 /* SPCustomers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPCustomers.swift; sourceTree = "<group>"; };
 		BF3C718220E4B04500B65CA1 /* SPCompanyDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPCompanyDetails.swift; sourceTree = "<group>"; };
+		BF3C718420E5B11400B65CA1 /* MaintenanceRequestedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaintenanceRequestedController.swift; sourceTree = "<group>"; };
+		BF3C718620E5C33000B65CA1 /* SPProgressController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPProgressController.swift; sourceTree = "<group>"; };
+		BF3C718820E5C56900B65CA1 /* SPProgressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPProgressCell.swift; sourceTree = "<group>"; };
+		BF3C718A20E5C58B00B65CA1 /* NewRequestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRequestCell.swift; sourceTree = "<group>"; };
+		BF3C718C20E5C99500B65CA1 /* SPMaintenanceRequestedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPMaintenanceRequestedController.swift; sourceTree = "<group>"; };
 		BF663CC420DC470800B45B72 /* RenterHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenterHistoryCell.swift; sourceTree = "<group>"; };
 		BF663CC620DC4FA400B45B72 /* TheBossOwner.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TheBossOwner.storyboard; sourceTree = "<group>"; };
 		BF663CC820DC51EF00B45B72 /* TheBossSP.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TheBossSP.storyboard; sourceTree = "<group>"; };
@@ -222,6 +234,8 @@
 		BFB850ED20B73FCD007FC8F9 /* ServiceProProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProProfileController.swift; sourceTree = "<group>"; };
 		BFE47D9D20DC3CC000B8EA19 /* RenterRequestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenterRequestController.swift; sourceTree = "<group>"; };
 		BFE47D9F20DC3CEF00B8EA19 /* RenterMaintenanceHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenterMaintenanceHistory.swift; sourceTree = "<group>"; };
+		BFEC93FB20E5E86F006794B0 /* OwnerRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerRequest.swift; sourceTree = "<group>"; };
+		BFEC93FD20E5F2E9006794B0 /* SPRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +269,8 @@
 			isa = PBXGroup;
 			children = (
 				BF08FAE920D3372700268F09 /* RenterRequest.swift */,
+				BFEC93FD20E5F2E9006794B0 /* SPRequest.swift */,
+				BFEC93FB20E5E86F006794B0 /* OwnerRequest.swift */,
 				BF3C716E20E2E6D700B65CA1 /* RenterProfile.swift */,
 				BF3C717220E4973300B65CA1 /* RenterTeam.swift */,
 				BF3C717420E49A6D00B65CA1 /* OwnerProfile.swift */,
@@ -448,6 +464,7 @@
 				BFB850BD20B26164007FC8F9 /* InvoiceEstimateController.swift */,
 				BFB850BF20B261D2007FC8F9 /* InvoiceEstimateCell.swift */,
 				BFB850C120B26249007FC8F9 /* OwnerProgress.storyboard */,
+				BF3C718420E5B11400B65CA1 /* MaintenanceRequestedController.swift */,
 				BFB850C320B26290007FC8F9 /* OwnerProgressController.swift */,
 				BFB850C520B2633F007FC8F9 /* NewRequestsCell.swift */,
 				BFB850C720B26380007FC8F9 /* OwnerProgressDataCell.swift */,
@@ -510,6 +527,10 @@
 			isa = PBXGroup;
 			children = (
 				BF08FAF120D8C95200268F09 /* ServiceProProgress.storyboard */,
+				BF3C718620E5C33000B65CA1 /* SPProgressController.swift */,
+				BF3C718820E5C56900B65CA1 /* SPProgressCell.swift */,
+				BF3C718A20E5C58B00B65CA1 /* NewRequestCell.swift */,
+				BF3C718C20E5C99500B65CA1 /* SPMaintenanceRequestedController.swift */,
 			);
 			path = "ServicePro Current";
 			sourceTree = "<group>";
@@ -811,13 +832,18 @@
 				BFB850D220B51FC4007FC8F9 /* RenterProgressCell.swift in Sources */,
 				BF3C718320E4B04500B65CA1 /* SPCompanyDetails.swift in Sources */,
 				BF3C717720E49E7900B65CA1 /* OwnerTeam.swift in Sources */,
+				BF3C718920E5C56900B65CA1 /* SPProgressCell.swift in Sources */,
+				BF3C718B20E5C58B00B65CA1 /* NewRequestCell.swift in Sources */,
 				BF9EDE0E20D9985A0026CEA9 /* ServiceProMaintenanceAssessmentController.swift in Sources */,
+				BFEC93FC20E5E86F006794B0 /* OwnerRequest.swift in Sources */,
 				BFB850BC20B260DA007FC8F9 /* OwnerHistoryCell.swift in Sources */,
 				BF3C718120E4AE1100B65CA1 /* SPCustomers.swift in Sources */,
 				BF663CCF20DC54D400B45B72 /* TheBossSPController.swift in Sources */,
 				BF08FADA20CDF7E800268F09 /* OwnerCustomersController.swift in Sources */,
 				BFB850CC20B4C10D007FC8F9 /* RenterMaintenanceRequestController.swift in Sources */,
+				BF3C718720E5C33000B65CA1 /* SPProgressController.swift in Sources */,
 				BF663CD120DC554700B45B72 /* TheBossSPCell.swift in Sources */,
+				BFEC93FE20E5F2E9006794B0 /* SPRequest.swift in Sources */,
 				BFB850BA20B260A1007FC8F9 /* OwnerHIstoryController.swift in Sources */,
 				BFB8508D20ABE9EB007FC8F9 /* LandingPageController.swift in Sources */,
 				BFE47D9E20DC3CC000B8EA19 /* RenterRequestController.swift in Sources */,
@@ -832,6 +858,7 @@
 				BF663CCB20DC52B100B45B72 /* TheBossOwnerController.swift in Sources */,
 				BF663CD320DCAE6300B45B72 /* ServiceProMaterialsController.swift in Sources */,
 				BF3C717B20E4A4A100B65CA1 /* OwnerCustomers.swift in Sources */,
+				BF3C718D20E5C99500B65CA1 /* SPMaintenanceRequestedController.swift in Sources */,
 				BF3C716F20E2E6D700B65CA1 /* RenterProfile.swift in Sources */,
 				BF08FAEA20D3372700268F09 /* RenterRequest.swift in Sources */,
 				BF08FAE620D0C66F00268F09 /* ServiceProTeamController.swift in Sources */,
@@ -844,6 +871,7 @@
 				BFE47DA020DC3CEF00B8EA19 /* RenterMaintenanceHistory.swift in Sources */,
 				BF663CC520DC470800B45B72 /* RenterHistoryCell.swift in Sources */,
 				BFB850B020B25EDB007FC8F9 /* OwnerMaintenanceRequestController.swift in Sources */,
+				BF3C718520E5B11400B65CA1 /* MaintenanceRequestedController.swift in Sources */,
 				BF08FAD820CDF11D00268F09 /* CompanyDetailsController.swift in Sources */,
 				BFB850EE20B73FCD007FC8F9 /* ServiceProProfileController.swift in Sources */,
 				BFB850C420B26290007FC8F9 /* OwnerProgressController.swift in Sources */,

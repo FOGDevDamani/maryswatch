@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class Owner_MaintenanceRequestController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     @IBOutlet weak var manageMyAccount: UIView!
@@ -31,9 +32,8 @@ class Owner_MaintenanceRequestController: UIViewController,UITableViewDataSource
     }
     
     
-    var defaults = UserDefaults.standard
+    var ownerRequest: Results<OwnerRequest>?
     
-    var unitArray = [String]()
     
     
     override func viewDidLoad() {
@@ -41,7 +41,6 @@ class Owner_MaintenanceRequestController: UIViewController,UITableViewDataSource
         
         // Do any additional setup after loading the view.
         
-        defaults.set(unitArray, forKey: "unitArray")
     }
     
     override func didReceiveMemoryWarning() {
@@ -67,31 +66,38 @@ class Owner_MaintenanceRequestController: UIViewController,UITableViewDataSource
     
     
     func saveRequest() {
-        defaults.set(ownerRequestAddress.text, forKey: "ownerRequestAddress")
-        defaults.set(ownerRequestPreviouslyReported, forKey: "ownerRequestPreviouslyReported")
-        defaults.set(ownerRequestPreferredTimeAndDate.text, forKey: "ownerRequestPreferredTimeAndDate")
-        defaults.set(ownerRequestPets, forKey: "ownerRequestPets")
-        defaults.set(OwnerRequestAuthorizeEntry, forKey: "ownerRequestAuthorizeEntry")
-        defaults.set(ownerRequestPreferredContactNumber.text, forKey: "ownerRequestPreferredContactNumber")
+        let newOwnerRequest = OwnerRequest()
+        newOwnerRequest.setValue(self.ownerRequestAddress!.text, forKey: "ownerRequestAddress")
+        newOwnerRequest.setValue(self.ownerRequestPreviouslyReported!.isOn, forKey: "ownerRequestPreviouslyReported")
+        newOwnerRequest.setValue(self.ownerRequestPreferredTimeAndDate!.text, forKey: "ownerRequestPreferredTimeAndDate")
+        newOwnerRequest.setValue(self.ownerRequestPets!.isOn, forKey: "ownerRequestPets")
+        newOwnerRequest.setValue(self.OwnerRequestAuthorizeEntry!.isOn, forKey: "ownerRequestAuthorizedEntry")
+        newOwnerRequest.setValue(self.ownerRequestPreferredContactNumber!.text, forKey: "ownerRequestPreferredContactNumber")
+        
     }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return unitArray.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "OwnerRequestCell"
+        
+       
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? OwnerMaintenanceRequestCell
             else {
                 fatalError("The dequeued cell is not an instance of OwnerMaintenanceRequestCell.")
         }
         
-        cell.ownerRequestType.text = unitArray[indexPath.row]
-        cell.ownerRequestUnitNumber.text = unitArray[indexPath.row]
-        cell.ownerRequestRoom.text = unitArray[indexPath.row]
-        cell.ownerRequestDescription.text = unitArray[indexPath.row]
+        
+        cell.ownerRequestType.text = ""
+        cell.ownerRequestUnitNumber.text = ""
+        cell.ownerRequestRoom.text = ""
+        cell.ownerRequestDescription.text = ""
+        cell.saveTableData()
+       
         
         return cell
     }

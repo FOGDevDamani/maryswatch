@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ServiceProMaintenanceAssessmentController: UIViewController, UITextViewDelegate {
 
@@ -23,19 +24,37 @@ class ServiceProMaintenanceAssessmentController: UIViewController, UITextViewDel
     @IBOutlet weak var serviceProAssessmentDescription: UITextView!
     @IBOutlet weak var serviceProAssessmentTimeFrameToComplete: UITextField!
     @IBOutlet weak var serviceProAssessmentEstimatedStartDate: UITextField!
+    @IBOutlet weak var serviceProAssessmentACType: UITextField!
+    @IBOutlet weak var serviceProAssessmentACAmount: UITextField!
+    @IBOutlet weak var serviceProAssessmentACInternalCost: UISwitch!
+    @IBOutlet weak var serviceProAssessmentACVisibleToCustomer: UISwitch!
+    @IBOutlet weak var serviceProAssessmentACDetails: UITextView!
     
     
-    var defaults = UserDefaults.standard
+    
+    
+    
+    
+    @IBOutlet weak var additionalCosts: UIView!
+    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func turnAdditionalCostsOn(_ sender: Any) {
+        if serviceProAssessmentAdditionalCosts.isOn == true {
+            additionalCosts.isHidden = false
+        }
     }
+    
+    @IBAction func turnAdditionalCostsOff(_ sender: Any) {
+        additionalCosts.isHidden = true
+    }
+    
     
     
     @IBAction func submitAssessment(_ sender: Any) {
@@ -43,20 +62,32 @@ class ServiceProMaintenanceAssessmentController: UIViewController, UITextViewDel
     }
     
     func saveRequest() {
-        defaults.set(serviceProAssessmentAddress.text!, forKey: "spAssessmentAddress")
-        defaults.set(serviceProAssessmentEmergency.isOn, forKey: "spAssessmentEmergency")
-        defaults.set(serviceProAssessmentType.text!, forKey: "spAssessmentType")
-        defaults.set(serviceProAssessmentRoom.text!, forKey: "spAssessmentRoom")
-        defaults.set(serviceProAssessmentLaborType.text!, forKey: "spAssessmentLaborType")
-        defaults.set(serviceProAssessmentNumberOfLaborers.text!, forKey: "spAssessmentNumberOfLaborers")
-        defaults.set(serviceProNumberOfHours.text!, forKey: "spNumberOfHours")
-        defaults.set(serviceProAssessmentRate.text!, forKey: "spAssessmentRate")
-        defaults.set(serviceProAssessmentAmount.text!, forKey: "spAssessmentAmount")
-        defaults.set(serviceProAssessmentDescription.text!, forKey: "spAssessmentDescription")
-        defaults.set(serviceProAssessmentTimeFrameToComplete.text!, forKey: "spAssessmentTimeFrameToComplete")
-        defaults.set(serviceProAssessmentEstimatedStartDate.text!, forKey: "spAssessmentEstimatedStartDate")
+        let newSPRequest = SPRequest()
+        newSPRequest.setValue(self.serviceProAssessmentAddress!.text, forKey: "spAssessmentAddress")
+        newSPRequest.setValue(self.serviceProAssessmentEmergency!.isOn, forKey: "spAssessmentEmergency")
+        newSPRequest.setValue(self.serviceProAssessmentType!.text, forKey: "spAssessmentType")
+        newSPRequest.setValue(self.serviceProAssessmentRoom!.text, forKey: "spAssessmentRoom")
+        newSPRequest.setValue(self.serviceProAssessmentLaborType!.text, forKey: "spAssessmentLaborType")
+        newSPRequest.setValue(self.serviceProAssessmentNumberOfLaborers!.text, forKey: "spAssessmentNumberOLaborers")
+        newSPRequest.setValue(self.serviceProNumberOfHours!.text, forKey: "spAssessmentNumberOfHours")
+        newSPRequest.setValue(self.serviceProAssessmentRate!.text, forKey: "spAssessmentRate")
+        newSPRequest.setValue(self.serviceProAssessmentAmount!.text, forKey: "spAssessmentAmount")
+        newSPRequest.setValue(self.serviceProAssessmentAdditionalCosts!.isOn, forKey: "spAssessmentAddtionalCosts")
+        newSPRequest.setValue(self.serviceProAssessmentDescription!.text, forKey: "spAssessmentDescription")
+        newSPRequest.setValue(self.serviceProAssessmentTimeFrameToComplete!.text, forKey: "spAssessmentTimeFrameToComplete")
+        newSPRequest.setValue(self.serviceProAssessmentEstimatedStartDate!.text, forKey: "spAssessmentEstimatedStartDate")
     }
     
+    
+    
+    @IBAction func addToAssessment(_ sender: Any) {
+        let additionalCosts = SPRequest()
+        additionalCosts.setValue(serviceProAssessmentACType!.text, forKey: "spAssessementACType")
+        additionalCosts.setValue(serviceProAssessmentACAmount!.text, forKey: "spAssessmentACAmount")
+        additionalCosts.setValue(serviceProAssessmentACDetails!.text, forKey: "spAssessmentACDetails")
+        additionalCosts.setValue(serviceProAssessmentACInternalCost!.isOn, forKey: "spAssessmentACInternalCosts")
+        additionalCosts.setValue(serviceProAssessmentACVisibleToCustomer!.isOn, forKey: "spAssessmentACVisibleToCustomer")
+    }
     
     
     
