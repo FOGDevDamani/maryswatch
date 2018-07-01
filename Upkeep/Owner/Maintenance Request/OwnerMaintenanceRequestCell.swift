@@ -24,6 +24,19 @@ class OwnerMaintenanceRequestCell: UITableViewCell {
         saveTableData.setValue(self.ownerRequestUnitNumber!.text, forKey: "ownerRequestUnitNumber")
         saveTableData.setValue(self.ownerRequestRoom!.text, forKey: "ownerReqestRoom")
         saveTableData.setValue(self.ownerRequestDescription!.text, forKey: "ownerRequestDescription")
+        let realm = try! Realm()
+        
+        do {
+            try realm.write {
+                realm.add(saveTableData)
+                print("added \(saveTableData.ownerRequestType) to Realm Database")
+                print("added \(saveTableData.ownerUnitNumber) to Realm Database")
+                print("added \(saveTableData.ownerRoom) to Realm Database")
+                print("added \(saveTableData.ownerProblemDescription) to Realm Database")
+            }
+        } catch {
+            print(error)
+        }
     }
     
     

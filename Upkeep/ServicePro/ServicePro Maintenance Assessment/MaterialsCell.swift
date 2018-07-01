@@ -7,16 +7,42 @@
 //
 
 import UIKit
+import RealmSwift
 
-class MaterialsCell: UITableViewCell {
 
-    @IBOutlet weak var materialsDescription: UITextField!
-    @IBOutlet weak var materialsQuantity: UITextField!
-    @IBOutlet weak var materialsAmount: UITextField!
-    @IBOutlet weak var materialsLabel: UILabel!
-    @IBOutlet weak var materialsTotal: UILabel!
+
+class MaterialsCell: UITableViewCell, UITextFieldDelegate{
+
+    @IBOutlet weak var totalEstimatedMaterial: UILabel!
+    @IBOutlet weak var materialTotal: UILabel!
+    @IBOutlet weak var materialDescription: UITextField!
+    @IBOutlet weak var materialQuantity: UITextField!
+    @IBOutlet weak var materialAmount: UITextField!
     
+   
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+    }
     
+    func saveMaterialsData() {
+        let saveMaterials = SPMaterialsRequest()
+        saveMaterials.setValue(self.materialDescription!.text, forKey: "materialDescriptiopn")
+        saveMaterials.setValue(self.materialQuantity!.text, forKey: "materialQuantity")
+        saveMaterials.setValue(self.materialAmount!.text, forKey: "materialAmount")
+        let realm = try! Realm()
+        
+        do {
+            try realm.write {
+                realm.add(saveMaterials)
+                print("added \(saveMaterials.materialDescription) to Realm Database")
+                print("added \(saveMaterials.materialQuantity) to Realm Database")
+                print("added \(saveMaterials.materialAmount) to Realm Database")
+                print("added \(saveMaterials.materialTotal) to Realm Database")
+            }
+        } catch {
+            print(error)
+        }
+    }
     
     
     override func awakeFromNib() {
@@ -29,5 +55,7 @@ class MaterialsCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+   
 
 }

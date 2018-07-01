@@ -73,6 +73,23 @@ class Owner_MaintenanceRequestController: UIViewController,UITableViewDataSource
         newOwnerRequest.setValue(self.ownerRequestPets!.isOn, forKey: "ownerRequestPets")
         newOwnerRequest.setValue(self.OwnerRequestAuthorizeEntry!.isOn, forKey: "ownerRequestAuthorizedEntry")
         newOwnerRequest.setValue(self.ownerRequestPreferredContactNumber!.text, forKey: "ownerRequestPreferredContactNumber")
+        let realm = try! Realm()
+        
+        do {
+            try realm.write {
+                realm.add(newOwnerRequest)
+                print("added \(newOwnerRequest.ownerAddress) to Realm Database")
+                 print("added \(newOwnerRequest.ownerPrevioslyReported) to Realm Database")
+                 print("added \(newOwnerRequest.ownerPreferredTimeAndDate) to Realm Database")
+                 print("added \(newOwnerRequest.ownerPets) to Realm Database")
+                 print("added \(newOwnerRequest.ownerAuthorizedEntry) to Realm Database")
+                 print("added \(newOwnerRequest.ownerPreferredContactNumber) to Realm Database")
+                
+            }
+        } catch {
+            print(error)
+        }
+        
         
     }
     

@@ -13,6 +13,7 @@ import RealmSwift
     dynamic var spRequestId: String = UUID().uuidString
     dynamic var spAssessmentAddress = ""
     dynamic var spAssessmentEmergency = false
+    dynamic var spAssessmentType = ""
     dynamic var spAssessmentRoom = ""
     dynamic var spAssessmentLaborType = ""
     dynamic var spAssessmentNumberOfLaborers = 0
@@ -30,7 +31,7 @@ import RealmSwift
     dynamic var spAssessmentACVisibleToCustomer = false
     
     override static func primaryKey() -> String {
-        return "requestId"
+        return "spRequestId"
     }
     
 }

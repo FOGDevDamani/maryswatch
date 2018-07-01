@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OD1-FX-3qX">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -27,10 +27,10 @@
             </objects>
             <point key="canvasLocation" x="-2674" y="4051"/>
         </scene>
-        <!--View Controller-->
+        <!--Renter Team Display Controller-->
         <scene sceneID="Q7O-Xn-k2p">
             <objects>
-                <viewController id="4nf-hE-fuX" sceneMemberID="viewController">
+                <viewController id="4nf-hE-fuX" customClass="RenterTeamDisplayController" customModule="maryswatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="irr-eQ-kzg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -55,25 +55,6 @@
                                             <segue destination="8LZ-c3-YI7" kind="show" id="B8A-Yp-yN6"/>
                                         </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-image" translatesAutoresizingMaskIntoConstraints="NO" id="saY-sa-HZe">
-                                        <rect key="frame" x="157" y="175" width="62" height="62"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="62" id="JJ8-zh-T75"/>
-                                            <constraint firstAttribute="height" constant="62" id="u11-I7-zya"/>
-                                        </constraints>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6B5-cO-pO7">
-                                        <rect key="frame" x="141" y="245" width="94" height="30"/>
-                                        <state key="normal" title="Name, Owner"/>
-                                    </button>
-                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="urJ-n6-dw0">
-                                        <rect key="frame" x="154" y="276" width="68" height="27"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="68" id="4oI-hh-PpA"/>
-                                            <constraint firstAttribute="height" constant="27" id="NHm-yC-SD8"/>
-                                        </constraints>
-                                        <state key="normal" image="email icon"/>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dzz-XD-ibk">
                                         <rect key="frame" x="138" y="24" width="100" height="40"/>
                                         <constraints>
@@ -91,21 +72,83 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <state key="normal" title="Done"/>
                                     </button>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZkJ-4l-RW0">
+                                        <rect key="frame" x="1" y="141" width="375" height="436"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.69411764710000001" green="0.79607843140000001" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jhk-ae-HZt">
+                                            <size key="itemSize" width="160" height="181"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RenterTeamCell" id="Pgc-Ss-WDF" customClass="RenterTeamViewCell" customModule="maryswatch" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="160" height="181"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="160" height="181"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6B5-cO-pO7">
+                                                            <rect key="frame" x="33" y="86" width="94" height="35"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="35" id="cw6-Dy-COK"/>
+                                                                <constraint firstAttribute="width" constant="94" id="wDW-IH-rKy"/>
+                                                            </constraints>
+                                                            <state key="normal" title="Name, Owner">
+                                                                <color key="titleColor" red="0.30065893474361094" green="0.58373202938523505" blue="0.92221009731292725" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            </state>
+                                                        </button>
+                                                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="urJ-n6-dw0">
+                                                            <rect key="frame" x="46" y="134" width="68" height="27"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="27" id="HTd-z4-gxR"/>
+                                                                <constraint firstAttribute="width" constant="68" id="mYA-6K-tp8"/>
+                                                            </constraints>
+                                                            <state key="normal" image="email icon"/>
+                                                        </button>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_avatar_male" translatesAutoresizingMaskIntoConstraints="NO" id="9DB-oE-urf">
+                                                            <rect key="frame" x="40" y="0.0" width="80" height="80"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                </view>
+                                                <color key="backgroundColor" red="0.69411764710000001" green="0.79607843140000001" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="urJ-n6-dw0" firstAttribute="top" secondItem="6B5-cO-pO7" secondAttribute="bottom" constant="13" id="6bZ-fy-sex"/>
+                                                    <constraint firstItem="9DB-oE-urf" firstAttribute="leading" secondItem="Pgc-Ss-WDF" secondAttribute="leading" constant="40" id="BOj-OP-QF5"/>
+                                                    <constraint firstItem="urJ-n6-dw0" firstAttribute="top" secondItem="6B5-cO-pO7" secondAttribute="bottom" constant="13" id="Ddd-Vu-Mfe"/>
+                                                    <constraint firstAttribute="trailingMargin" secondItem="6B5-cO-pO7" secondAttribute="trailing" constant="25" id="H07-hg-gX0"/>
+                                                    <constraint firstItem="6B5-cO-pO7" firstAttribute="leading" secondItem="Pgc-Ss-WDF" secondAttribute="leadingMargin" constant="25" id="H19-BT-gcC"/>
+                                                    <constraint firstAttribute="trailingMargin" secondItem="urJ-n6-dw0" secondAttribute="trailing" constant="38" id="HyW-ic-yxp"/>
+                                                    <constraint firstItem="urJ-n6-dw0" firstAttribute="leading" secondItem="Pgc-Ss-WDF" secondAttribute="leadingMargin" constant="38" id="Ol5-JZ-uNH"/>
+                                                    <constraint firstItem="6B5-cO-pO7" firstAttribute="top" secondItem="9DB-oE-urf" secondAttribute="bottom" constant="6" id="ehM-be-4Oi"/>
+                                                    <constraint firstItem="9DB-oE-urf" firstAttribute="top" secondItem="Pgc-Ss-WDF" secondAttribute="top" id="plZ-Rl-yDW"/>
+                                                    <constraint firstItem="6B5-cO-pO7" firstAttribute="top" secondItem="9DB-oE-urf" secondAttribute="bottom" constant="6" id="sRQ-MD-fan"/>
+                                                    <constraint firstAttribute="trailing" secondItem="9DB-oE-urf" secondAttribute="trailing" constant="40" id="wYS-cu-UgV"/>
+                                                    <constraint firstAttribute="bottomMargin" secondItem="urJ-n6-dw0" secondAttribute="bottom" constant="12" id="ztX-tK-99V"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="renterTeamImage" destination="9DB-oE-urf" id="ySL-jM-YPI"/>
+                                                    <outlet property="teamMemberNameAndTitle" destination="6B5-cO-pO7" id="lHZ-CR-dWx"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="4nf-hE-fuX" id="oYU-x6-dSI"/>
+                                            <outlet property="delegate" destination="4nf-hE-fuX" id="LaU-dg-Lni"/>
+                                        </connections>
+                                    </collectionView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.69411764710000001" green="0.79607843140000001" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="udI-hW-0RE" secondAttribute="trailing" constant="13" id="6ei-uv-K5R"/>
                                     <constraint firstAttribute="trailing" secondItem="GKK-Sz-8yr" secondAttribute="trailing" constant="19" id="7xu-2U-exk"/>
                                     <constraint firstItem="8zt-kf-6ud" firstAttribute="leading" secondItem="Y2c-KJ-guz" secondAttribute="leading" constant="37" id="9za-iS-xLz"/>
-                                    <constraint firstItem="6B5-cO-pO7" firstAttribute="centerX" secondItem="Y2c-KJ-guz" secondAttribute="centerX" id="ByO-6z-DW9"/>
-                                    <constraint firstItem="urJ-n6-dw0" firstAttribute="centerX" secondItem="Y2c-KJ-guz" secondAttribute="centerX" id="HFe-AU-WNL"/>
                                     <constraint firstItem="Dzz-XD-ibk" firstAttribute="top" secondItem="Y2c-KJ-guz" secondAttribute="topMargin" constant="-4" id="Iec-o2-1iI"/>
-                                    <constraint firstItem="saY-sa-HZe" firstAttribute="top" secondItem="Y2c-KJ-guz" secondAttribute="top" constant="175" id="O2P-1w-QwA"/>
                                     <constraint firstItem="udI-hW-0RE" firstAttribute="bottom" secondItem="Y2c-KJ-guz" secondAttribute="bottomMargin" id="Ow2-7J-SD0"/>
                                     <constraint firstItem="8zt-kf-6ud" firstAttribute="top" secondItem="Y2c-KJ-guz" secondAttribute="topMargin" constant="71" id="U4L-1J-Ox9"/>
-                                    <constraint firstItem="urJ-n6-dw0" firstAttribute="top" secondItem="6B5-cO-pO7" secondAttribute="bottom" constant="1" id="W0V-HT-ckD"/>
-                                    <constraint firstItem="6B5-cO-pO7" firstAttribute="top" secondItem="saY-sa-HZe" secondAttribute="bottom" constant="8" id="dYZ-fM-c94"/>
-                                    <constraint firstItem="saY-sa-HZe" firstAttribute="centerX" secondItem="Y2c-KJ-guz" secondAttribute="centerX" id="g7f-Ak-uK1"/>
                                     <constraint firstItem="Dzz-XD-ibk" firstAttribute="centerX" secondItem="Y2c-KJ-guz" secondAttribute="centerX" constant="0.5" id="hd0-x1-7f5"/>
                                     <constraint firstItem="GKK-Sz-8yr" firstAttribute="top" secondItem="Y2c-KJ-guz" secondAttribute="topMargin" constant="65" id="vrS-Wb-Lpe"/>
                                 </constraints>
@@ -121,10 +164,13 @@
                         <viewLayoutGuide key="safeArea" id="XTS-zk-aDt"/>
                     </view>
                     <navigationItem key="navigationItem" id="6Ig-Xs-vaR"/>
+                    <connections>
+                        <outlet property="renterTeamView" destination="ZkJ-4l-RW0" id="dny-gU-MTg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T8Z-yp-xQV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1902" y="4050"/>
+            <point key="canvasLocation" x="-1903.2" y="4049.3253373313346"/>
         </scene>
         <!--Renter Team Controller-->
         <scene sceneID="q99-dn-16I">
@@ -396,8 +442,8 @@
     <resources>
         <image name="add plus" width="94" height="94"/>
         <image name="add team member" width="265" height="99"/>
+        <image name="default_avatar_male" width="160" height="160"/>
         <image name="email icon" width="210" height="74"/>
         <image name="mw logo tm" width="248" height="102"/>
-        <image name="no-image" width="354" height="218"/>
     </resources>
 </document>

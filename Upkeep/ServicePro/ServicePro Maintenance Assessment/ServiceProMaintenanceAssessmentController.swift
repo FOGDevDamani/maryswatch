@@ -68,14 +68,37 @@ class ServiceProMaintenanceAssessmentController: UIViewController, UITextViewDel
         newSPRequest.setValue(self.serviceProAssessmentType!.text, forKey: "spAssessmentType")
         newSPRequest.setValue(self.serviceProAssessmentRoom!.text, forKey: "spAssessmentRoom")
         newSPRequest.setValue(self.serviceProAssessmentLaborType!.text, forKey: "spAssessmentLaborType")
-        newSPRequest.setValue(self.serviceProAssessmentNumberOfLaborers!.text, forKey: "spAssessmentNumberOLaborers")
+        newSPRequest.setValue(self.serviceProAssessmentNumberOfLaborers!.text, forKey: "spAssessmentNumberOfLaborers")
         newSPRequest.setValue(self.serviceProNumberOfHours!.text, forKey: "spAssessmentNumberOfHours")
         newSPRequest.setValue(self.serviceProAssessmentRate!.text, forKey: "spAssessmentRate")
         newSPRequest.setValue(self.serviceProAssessmentAmount!.text, forKey: "spAssessmentAmount")
-        newSPRequest.setValue(self.serviceProAssessmentAdditionalCosts!.isOn, forKey: "spAssessmentAddtionalCosts")
+        newSPRequest.setValue(self.serviceProAssessmentAdditionalCosts!.isOn, forKey: "spAssessmentAdditionalCosts")
         newSPRequest.setValue(self.serviceProAssessmentDescription!.text, forKey: "spAssessmentDescription")
         newSPRequest.setValue(self.serviceProAssessmentTimeFrameToComplete!.text, forKey: "spAssessmentTimeFrameToComplete")
         newSPRequest.setValue(self.serviceProAssessmentEstimatedStartDate!.text, forKey: "spAssessmentEstimatedStartDate")
+        let realm = try! Realm()
+        
+        do {
+            try realm.write {
+                realm.add(newSPRequest)
+                print("added \(newSPRequest.spAssessmentAddress) to Realm Database")
+                 print("added \(newSPRequest.spAssessmentEmergency) to Realm Database")
+                 print("added \(newSPRequest.spAssessmentType) to Realm Database")
+                 print("added \(newSPRequest.spAssessmentRoom) to Realm Database")
+                 print("added \(newSPRequest.spAssessmentLaborType) to Realm Database")
+                 print("added \(newSPRequest.spAssessmentNumberOfLaborers) to Realm Database")
+                 print("added \(newSPRequest.spAssessmentNumberOfHours) to Realm Database")
+                 print("added \(newSPRequest.spAssessmentRate) to Realm Database")
+                 print("added \(newSPRequest.spAssessmentAmount) to Realm Database")
+                 print("added \(newSPRequest.spAssessmentAdditionalCosts) to Realm Database")
+                 print("added \(newSPRequest.spAssessmentDescription) to Realm Database")
+                 print("added \(newSPRequest.spAssessmentTimeFrameToComplete) to Realm Database")
+                 print("added \(newSPRequest.spAssessmentEstimatedStartDate) to Realm Database")
+                
+            }
+        } catch {
+            print(error)
+        }
     }
     
     
@@ -87,6 +110,20 @@ class ServiceProMaintenanceAssessmentController: UIViewController, UITextViewDel
         additionalCosts.setValue(serviceProAssessmentACDetails!.text, forKey: "spAssessmentACDetails")
         additionalCosts.setValue(serviceProAssessmentACInternalCost!.isOn, forKey: "spAssessmentACInternalCosts")
         additionalCosts.setValue(serviceProAssessmentACVisibleToCustomer!.isOn, forKey: "spAssessmentACVisibleToCustomer")
+        let realm = try! Realm()
+        
+        do {
+            try realm.write {
+                realm.add(additionalCosts)
+                print("added \(additionalCosts.spAssessmentACType) to Realm Database")
+                print("added \(additionalCosts.spAssessmentACAmount) to Realm Database")
+                print("added \(additionalCosts.spAssessmentACDetails) to Realm Database")
+                print("added \(additionalCosts.spAssessmentACInternalCost) to Realm Database")
+                print("added \(additionalCosts.spAssessmentACVisibleToCustomer) to Realm Database")
+            }
+        } catch {
+            print(error)
+        }
     }
     
     
